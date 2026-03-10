@@ -6,16 +6,19 @@
   <title>Alexandra Ania Fjellvik | GIS & Remote Sensing</title>
   <style>
     :root {
-      --bg: #f6f7f9;
+      --bg: #f5f7f8;
       --surface: #ffffff;
+      --surface-soft: #f8fafc;
       --text: #1f2937;
       --muted: #6b7280;
       --line: #e5e7eb;
       --accent: #0f766e;
-      --accent-2: #164e63;
-      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-      --radius: 20px;
-      --max: 1120px;
+      --accent-dark: #115e59;
+      --accent-deep: #164e63;
+      --shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 18px 50px rgba(15, 23, 42, 0.16);
+      --radius: 22px;
+      --max: 1160px;
     }
 
     * { box-sizing: border-box; }
@@ -24,7 +27,10 @@
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
+      background:
+        radial-gradient(circle at top left, rgba(15, 118, 110, 0.05), transparent 28%),
+        radial-gradient(circle at top right, rgba(22, 78, 99, 0.05), transparent 30%),
+        var(--bg);
       color: var(--text);
       line-height: 1.6;
     }
@@ -46,23 +52,24 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: rgba(246, 247, 249, 0.9);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(229, 231, 235, 0.8);
+      z-index: 100;
+      background: rgba(245, 247, 248, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(229, 231, 235, 0.85);
     }
 
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 0;
       gap: 1rem;
+      padding: 1rem 0;
     }
 
     .brand {
       font-weight: 700;
       letter-spacing: 0.01em;
+      color: var(--accent-deep);
     }
 
     .nav-links {
@@ -72,8 +79,13 @@
       font-size: 0.95rem;
     }
 
+    .nav-links a {
+      color: var(--text);
+      font-weight: 500;
+    }
+
     .hero {
-      padding: 5rem 0 3rem;
+      padding: 5.5rem 0 3.5rem;
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
       gap: 2rem;
@@ -86,19 +98,20 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
       font-size: 0.78rem;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.8rem;
     }
 
     h1 {
-      font-size: clamp(2.2rem, 5vw, 4.2rem);
-      line-height: 1.05;
+      font-size: clamp(2.5rem, 5vw, 4.6rem);
+      line-height: 1.02;
       margin: 0 0 1rem;
+      letter-spacing: -0.03em;
     }
 
     .lead {
       font-size: 1.08rem;
       color: var(--muted);
-      max-width: 60ch;
+      max-width: 62ch;
       margin-bottom: 1.5rem;
     }
 
@@ -118,6 +131,7 @@
       border: 1px solid transparent;
       font-weight: 600;
       transition: 0.2s ease;
+      cursor: pointer;
     }
 
     .btn-primary {
@@ -127,8 +141,9 @@
     }
 
     .btn-primary:hover {
-      background: #0b5c56;
+      background: var(--accent-dark);
       text-decoration: none;
+      transform: translateY(-1px);
     }
 
     .btn-secondary {
@@ -140,6 +155,7 @@
     .btn-secondary:hover {
       text-decoration: none;
       border-color: #cbd5e1;
+      transform: translateY(-1px);
     }
 
     .hero-card {
@@ -147,7 +163,7 @@
       color: white;
       padding: 2rem;
       border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-lg);
     }
 
     .hero-card h2 {
@@ -158,6 +174,10 @@
     .hero-card ul {
       padding-left: 1.2rem;
       margin: 0;
+    }
+
+    .hero-card li + li {
+      margin-top: 0.5rem;
     }
 
     section {
@@ -174,19 +194,20 @@
 
     .section-head h2 {
       margin: 0;
-      font-size: 1.8rem;
+      font-size: 1.9rem;
+      letter-spacing: -0.02em;
     }
 
     .section-head p {
       margin: 0;
       color: var(--muted);
-      max-width: 60ch;
+      max-width: 64ch;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.25rem;
+      gap: 1.4rem;
     }
 
     .card {
@@ -195,64 +216,88 @@
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
     }
 
     .gallery {
       position: relative;
-      background: #dbe4ea;
+      background: var(--surface-soft);
+      padding: 1rem;
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
     }
 
     .gallery img {
       width: 100%;
-      height: 260px;
-      object-fit: cover;
+      height: auto;
+      max-height: 420px;
+      object-fit: contain;
       display: block;
-      background: #dbe4ea;
+      border-radius: 12px;
+      background: var(--surface-soft);
     }
 
     .gallery-btn {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 2.4rem;
-      height: 2.4rem;
+      width: 2.5rem;
+      height: 2.5rem;
       border: none;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.96);
       color: #0f172a;
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       cursor: pointer;
       box-shadow: var(--shadow);
       display: flex;
       align-items: center;
       justify-content: center;
+      z-index: 2;
     }
 
     .gallery-btn:hover {
       background: white;
     }
 
-    .gallery-btn.prev {
-      left: 0.8rem;
-    }
-
-    .gallery-btn.next {
-      right: 0.8rem;
-    }
+    .gallery-btn.prev { left: 1rem; }
+    .gallery-btn.next { right: 1rem; }
 
     .gallery-count {
       position: absolute;
-      right: 0.8rem;
-      bottom: 0.8rem;
+      right: 1rem;
+      bottom: 1rem;
       background: rgba(15, 23, 42, 0.72);
       color: white;
       font-size: 0.82rem;
-      padding: 0.25rem 0.55rem;
+      padding: 0.28rem 0.6rem;
       border-radius: 999px;
+      z-index: 2;
+    }
+
+    .zoom-hint {
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--text);
+      font-size: 0.8rem;
+      padding: 0.28rem 0.6rem;
+      border-radius: 999px;
+      z-index: 2;
+      border: 1px solid rgba(229, 231, 235, 0.8);
     }
 
     .card-body {
-      padding: 1.25rem;
+      padding: 1.35rem;
     }
 
     .tag {
@@ -268,7 +313,8 @@
 
     .card h3 {
       margin: 0 0 0.6rem;
-      font-size: 1.2rem;
+      font-size: 1.22rem;
+      line-height: 1.25;
     }
 
     .card p {
@@ -315,18 +361,165 @@
       font-size: 0.95rem;
     }
 
-    @media (max-width: 900px) {
-      .hero, .about, .grid {
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.76);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      z-index: 999;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-content {
+      width: min(1200px, 100%);
+      max-height: 92vh;
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+    }
+
+    .modal-figure {
+      background: #f8fafc;
+      padding: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      min-height: 500px;
+    }
+
+    .modal-figure img {
+      max-width: 100%;
+      max-height: 78vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .modal-panel {
+      padding: 1.5rem;
+      border-left: 1px solid var(--line);
+      overflow-y: auto;
+    }
+
+    .modal-panel h3 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+      font-size: 1.4rem;
+      line-height: 1.2;
+    }
+
+    .modal-panel p {
+      color: var(--muted);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 2.6rem;
+      height: 2.6rem;
+      border: none;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.95);
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      z-index: 3;
+    }
+
+    .modal-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2.8rem;
+      height: 2.8rem;
+      border: none;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.95);
+      font-size: 1.45rem;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      z-index: 3;
+    }
+
+    .modal-nav.prev { left: 1rem; }
+    .modal-nav.next { right: 1rem; }
+
+    .modal-count {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      background: rgba(15, 23, 42, 0.76);
+      color: white;
+      font-size: 0.85rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      z-index: 3;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .about,
+      .grid,
+      .modal-content {
         grid-template-columns: 1fr;
       }
 
-      .gallery img {
-        height: 220px;
+      .modal-panel {
+        border-left: none;
+        border-top: 1px solid var(--line);
       }
+    }
 
+    @media (max-width: 900px) {
       .section-head {
         align-items: start;
         flex-direction: column;
+      }
+
+      .gallery {
+        min-height: 260px;
+      }
+
+      .gallery img {
+        max-height: 320px;
+      }
+
+      .hero {
+        padding-top: 4.5rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .gallery-btn,
+      .modal-nav {
+        width: 2.3rem;
+        height: 2.3rem;
+      }
+
+      .gallery {
+        padding: 0.8rem;
+      }
+
+      .modal-figure {
+        min-height: 320px;
+        padding: 0.8rem;
       }
     }
   </style>
@@ -375,16 +568,23 @@
       <div class="section-head">
         <div>
           <h2>Selected projects</h2>
-          <p>A web version of the portfolio with project cards and image galleries.</p>
+          <p>Project cards with image galleries. Click any image to open it larger.</p>
         </div>
       </div>
 
       <div class="grid">
         <article class="card">
-          <div class="gallery" data-images='["mt-st-helens.png","mt-st-helens2.png","mt-st-helens3.png"]' data-alt="Mount St Helens terrain analysis">
+          <div class="gallery"
+               data-images='["mt-st-helens.png","mt-st-helens2.png","mt-st-helens3.png"]'
+               data-alt="Mount St Helens terrain analysis"
+               data-title="Mount St Helens terrain and lava dome change"
+               data-tag="Volcanic Change Detection"
+               data-description="Used remote sensing, DEMs, and classification workflows to analyse terrain loss from the eruption and glacier-lava dome dynamics over time."
+               data-meta="Methods: DEM analysis, SVM classification, change quantification">
             <button class="gallery-btn prev" aria-label="Previous image">‹</button>
             <img src="mt-st-helens.png" alt="Mount St Helens terrain analysis" />
             <button class="gallery-btn next" aria-label="Next image">›</button>
+            <div class="zoom-hint">Click to enlarge</div>
             <div class="gallery-count">1 / 3</div>
           </div>
           <div class="card-body">
@@ -396,10 +596,17 @@
         </article>
 
         <article class="card">
-          <div class="gallery" data-images='["hawaii-bathymetry.png","hawaii-bathymetry2.png"]' data-alt="Bathymetry maps between Oahu and Kauai">
+          <div class="gallery"
+               data-images='["hawaii-bathymetry.png","hawaii-bathymetry2.png"]'
+               data-alt="Bathymetry maps between Oahu and Kauai"
+               data-title="Bathymetric survey design between Oʻahu and Kauaʻi"
+               data-tag="Marine Survey Planning"
+               data-description="Assessed seabed depth, geomorphology, and sediment characteristics to support survey logistics, vessel selection, and a potential gas pipeline route."
+               data-meta="Methods: Bathymetry, nautical chart interpretation, survey costing">
             <button class="gallery-btn prev" aria-label="Previous image">‹</button>
             <img src="hawaii-bathymetry.png" alt="Bathymetry maps between Oahu and Kauai" />
             <button class="gallery-btn next" aria-label="Next image">›</button>
+            <div class="zoom-hint">Click to enlarge</div>
             <div class="gallery-count">1 / 2</div>
           </div>
           <div class="card-body">
@@ -411,10 +618,17 @@
         </article>
 
         <article class="card">
-          <div class="gallery" data-images='["wrecks-3d.png"]' data-alt="3D models of shipwreck sites">
+          <div class="gallery"
+               data-images='["wrecks-3d.png"]'
+               data-alt="3D models of shipwreck sites"
+               data-title="3D visualisation of historic shipwrecks"
+               data-tag="Marine Archaeology"
+               data-description="Combined bathymetric and side scan sonar data to create interpretable 3D wreck models for archaeological diving assessment and hazard review."
+               data-meta="Methods: Side scan sonar, bathymetry, 3D modelling">
             <button class="gallery-btn prev" aria-label="Previous image">‹</button>
             <img src="wrecks-3d.png" alt="3D models of shipwreck sites" />
             <button class="gallery-btn next" aria-label="Next image">›</button>
+            <div class="zoom-hint">Click to enlarge</div>
             <div class="gallery-count">1 / 1</div>
           </div>
           <div class="card-body">
@@ -426,10 +640,17 @@
         </article>
 
         <article class="card">
-          <div class="gallery" data-images='["iceland-glacier.png","iceland-glacier2.png","iceland-glacier3.png"]' data-alt="Iceland glacier retreat analysis">
+          <div class="gallery"
+               data-images='["iceland-glacier.png","iceland-glacier2.png","iceland-glacier3.png"]'
+               data-alt="Iceland glacier retreat analysis"
+               data-title="Mýrdalsjökull glacier retreat and meltwater change"
+               data-tag="Cryosphere Monitoring"
+               data-description="Investigated glacial retreat in Iceland across multiple years to quantify loss of ice and assess downstream implications for hydropower systems."
+               data-meta="Methods: Glacier classification, retreat mapping, area comparison">
             <button class="gallery-btn prev" aria-label="Previous image">‹</button>
             <img src="iceland-glacier.png" alt="Iceland glacier retreat analysis" />
             <button class="gallery-btn next" aria-label="Next image">›</button>
+            <div class="zoom-hint">Click to enlarge</div>
             <div class="gallery-count">1 / 3</div>
           </div>
           <div class="card-body">
@@ -441,10 +662,17 @@
         </article>
 
         <article class="card">
-          <div class="gallery" data-images='["trysil-forest.png","trysil-forest2.png","trysil-forest3.png"]' data-alt="Forest and fungi mapping in Trysil">
+          <div class="gallery"
+               data-images='["trysil-forest.png","trysil-forest2.png","trysil-forest3.png"]'
+               data-alt="Forest and fungi mapping in Trysil"
+               data-title="Boreal forest health, fungi networks, and soil moisture in Trysil"
+               data-tag="Master’s Research"
+               data-description="Mapped forest composition, ectomycorrhizal fungi associations, and soil moisture dynamics to explore climate resilience and forest regeneration patterns."
+               data-meta="Methods: Multitemporal remote sensing, NDMI, change detection">
             <button class="gallery-btn prev" aria-label="Previous image">‹</button>
             <img src="trysil-forest.png" alt="Forest and fungi mapping in Trysil" />
             <button class="gallery-btn next" aria-label="Next image">›</button>
+            <div class="zoom-hint">Click to enlarge</div>
             <div class="gallery-count">1 / 3</div>
           </div>
           <div class="card-body">
@@ -456,10 +684,17 @@
         </article>
 
         <article class="card">
-          <div class="gallery" data-images='["engskogen-fire.png"]' data-alt="Wildfire recovery mapping in Sweden">
+          <div class="gallery"
+               data-images='["engskogen-fire.png"]'
+               data-alt="Wildfire recovery mapping in Sweden"
+               data-title="Vegetation regeneration after wildfire in Engskogen, Sweden"
+               data-tag="Wildfire Recovery"
+               data-description="Used Sentinel-based vegetation indices and SAR backscatter to analyse post-fire recovery and identify change in burned versus non-burned areas."
+               data-meta="Methods: NDVI, MSAVI, SAR backscatter, change detection">
             <button class="gallery-btn prev" aria-label="Previous image">‹</button>
             <img src="engskogen-fire.png" alt="Wildfire recovery mapping in Sweden" />
             <button class="gallery-btn next" aria-label="Next image">›</button>
+            <div class="zoom-hint">Click to enlarge</div>
             <div class="gallery-count">1 / 1</div>
           </div>
           <div class="card-body">
@@ -529,6 +764,24 @@
     </div>
   </footer>
 
+  <div class="modal" id="imageModal">
+    <div class="modal-content">
+      <div class="modal-figure">
+        <button class="modal-close" aria-label="Close">×</button>
+        <button class="modal-nav prev" aria-label="Previous image">‹</button>
+        <img id="modalImage" src="" alt="" />
+        <button class="modal-nav next" aria-label="Next image">›</button>
+        <div class="modal-count" id="modalCount"></div>
+      </div>
+      <div class="modal-panel">
+        <div class="tag" id="modalTag"></div>
+        <h3 id="modalTitle"></h3>
+        <p id="modalDescription"></p>
+        <div class="meta" id="modalMeta"></div>
+      </div>
+    </div>
+  </div>
+
   <script>
     document.querySelectorAll(".gallery").forEach((gallery) => {
       const images = JSON.parse(gallery.dataset.images);
@@ -551,17 +804,104 @@
         nextBtn.style.display = "none";
       }
 
-      prevBtn.addEventListener("click", () => {
+      prevBtn.addEventListener("click", (event) => {
+        event.stopPropagation();
         index = (index - 1 + images.length) % images.length;
         updateGallery();
       });
 
-      nextBtn.addEventListener("click", () => {
+      nextBtn.addEventListener("click", (event) => {
+        event.stopPropagation();
         index = (index + 1) % images.length;
         updateGallery();
       });
 
+      gallery.addEventListener("click", () => {
+        openModal(gallery, index);
+      });
+
       updateGallery();
+    });
+
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    const modalCount = document.getElementById("modalCount");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalTag = document.getElementById("modalTag");
+    const modalDescription = document.getElementById("modalDescription");
+    const modalMeta = document.getElementById("modalMeta");
+    const modalClose = document.querySelector(".modal-close");
+    const modalPrev = document.querySelector(".modal-nav.prev");
+    const modalNext = document.querySelector(".modal-nav.next");
+
+    let modalImages = [];
+    let modalAlt = "";
+    let modalIndex = 0;
+
+    function updateModal() {
+      modalImage.src = modalImages[modalIndex];
+      modalImage.alt = modalAlt + " (" + (modalIndex + 1) + ")";
+      modalCount.textContent = (modalIndex + 1) + " / " + modalImages.length;
+
+      if (modalImages.length <= 1) {
+        modalPrev.style.display = "none";
+        modalNext.style.display = "none";
+      } else {
+        modalPrev.style.display = "flex";
+        modalNext.style.display = "flex";
+      }
+    }
+
+    function openModal(gallery, startIndex) {
+      modalImages = JSON.parse(gallery.dataset.images);
+      modalAlt = gallery.dataset.alt;
+      modalIndex = startIndex || 0;
+
+      modalTitle.textContent = gallery.dataset.title || "";
+      modalTag.textContent = gallery.dataset.tag || "";
+      modalDescription.textContent = gallery.dataset.description || "";
+      modalMeta.textContent = gallery.dataset.meta || "";
+
+      updateModal();
+      modal.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      modal.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    modalPrev.addEventListener("click", () => {
+      modalIndex = (modalIndex - 1 + modalImages.length) % modalImages.length;
+      updateModal();
+    });
+
+    modalNext.addEventListener("click", () => {
+      modalIndex = (modalIndex + 1) % modalImages.length;
+      updateModal();
+    });
+
+    modalClose.addEventListener("click", closeModal);
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (!modal.classList.contains("open")) return;
+
+      if (event.key === "Escape") closeModal();
+      if (event.key === "ArrowLeft" && modalImages.length > 1) {
+        modalIndex = (modalIndex - 1 + modalImages.length) % modalImages.length;
+        updateModal();
+      }
+      if (event.key === "ArrowRight" && modalImages.length > 1) {
+        modalIndex = (modalIndex + 1) % modalImages.length;
+        updateModal();
+      }
     });
   </script>
 </body>
