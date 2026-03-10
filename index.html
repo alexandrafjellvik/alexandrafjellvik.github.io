@@ -20,6 +20,7 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -28,8 +29,14 @@
       line-height: 1.6;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
 
     .wrap {
       width: min(calc(100% - 2rem), var(--max));
@@ -119,7 +126,10 @@
       box-shadow: var(--shadow);
     }
 
-    .btn-primary:hover { background: #0b5c56; text-decoration: none; }
+    .btn-primary:hover {
+      background: #0b5c56;
+      text-decoration: none;
+    }
 
     .btn-secondary {
       background: var(--surface);
@@ -127,7 +137,10 @@
       color: var(--text);
     }
 
-    .btn-secondary:hover { text-decoration: none; border-color: #cbd5e1; }
+    .btn-secondary:hover {
+      text-decoration: none;
+      border-color: #cbd5e1;
+    }
 
     .hero-card {
       background: linear-gradient(135deg, #164e63, #0f766e);
@@ -184,12 +197,58 @@
       box-shadow: var(--shadow);
     }
 
-    .card img {
+    .gallery {
+      position: relative;
+      background: #dbe4ea;
+    }
+
+    .gallery img {
       width: 100%;
       height: 260px;
       object-fit: cover;
       display: block;
       background: #dbe4ea;
+    }
+
+    .gallery-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2.4rem;
+      height: 2.4rem;
+      border: none;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      color: #0f172a;
+      font-size: 1.3rem;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gallery-btn:hover {
+      background: white;
+    }
+
+    .gallery-btn.prev {
+      left: 0.8rem;
+    }
+
+    .gallery-btn.next {
+      right: 0.8rem;
+    }
+
+    .gallery-count {
+      position: absolute;
+      right: 0.8rem;
+      bottom: 0.8rem;
+      background: rgba(15, 23, 42, 0.72);
+      color: white;
+      font-size: 0.82rem;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
     }
 
     .card-body {
@@ -261,8 +320,14 @@
         grid-template-columns: 1fr;
       }
 
-      .card img { height: 220px; }
-      .section-head { align-items: start; flex-direction: column; }
+      .gallery img {
+        height: 220px;
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -286,7 +351,7 @@
         <div class="eyebrow">GIS · Remote Sensing · Spatial Analysis</div>
         <h1>Mapping environmental change through geospatial analysis.</h1>
         <p class="lead">
-          I am a GIS and remote sensing specialist with a master’s degree in Geographic Information Systems and Remote Sensing, a background in social geography, and experience working across marine management, environmental analysis, and digital cartography.
+          I am a GIS and remote sensing specialist with a master’s degree in Geographic Information Systems and Remote Sensing, a background in social geography, and experience across marine management, environmental analysis, and digital cartography.
         </p>
         <div class="cta-row">
           <a class="btn btn-primary" href="#projects">View projects</a>
@@ -310,13 +375,18 @@
       <div class="section-head">
         <div>
           <h2>Selected projects</h2>
-          <p>A cleaner web version of the portfolio, turning the PDF into individual project cards with short summaries and larger visuals.</p>
+          <p>A web version of the portfolio with project cards and image galleries.</p>
         </div>
       </div>
 
       <div class="grid">
         <article class="card">
-          <img src="images/mt-st-helens.jpg" alt="Mount St Helens terrain analysis" />
+          <div class="gallery" data-images='["mt-st-helens.png","mt-st-helens2.png","mt-st-helens3.png"]' data-alt="Mount St Helens terrain analysis">
+            <button class="gallery-btn prev" aria-label="Previous image">‹</button>
+            <img src="mt-st-helens.png" alt="Mount St Helens terrain analysis" />
+            <button class="gallery-btn next" aria-label="Next image">›</button>
+            <div class="gallery-count">1 / 3</div>
+          </div>
           <div class="card-body">
             <div class="tag">Volcanic Change Detection</div>
             <h3>Mount St Helens terrain and lava dome change</h3>
@@ -326,7 +396,12 @@
         </article>
 
         <article class="card">
-          <img src="images/hawaii-bathymetry.jpg" alt="Bathymetry maps between Oahu and Kauai" />
+          <div class="gallery" data-images='["hawaii-bathymetry.png","hawaii-bathymetry2.png"]' data-alt="Bathymetry maps between Oahu and Kauai">
+            <button class="gallery-btn prev" aria-label="Previous image">‹</button>
+            <img src="hawaii-bathymetry.png" alt="Bathymetry maps between Oahu and Kauai" />
+            <button class="gallery-btn next" aria-label="Next image">›</button>
+            <div class="gallery-count">1 / 2</div>
+          </div>
           <div class="card-body">
             <div class="tag">Marine Survey Planning</div>
             <h3>Bathymetric survey design between Oʻahu and Kauaʻi</h3>
@@ -336,7 +411,12 @@
         </article>
 
         <article class="card">
-          <img src="images/wrecks-3d.jpg" alt="3D models of shipwreck sites" />
+          <div class="gallery" data-images='["wrecks-3d.png"]' data-alt="3D models of shipwreck sites">
+            <button class="gallery-btn prev" aria-label="Previous image">‹</button>
+            <img src="wrecks-3d.png" alt="3D models of shipwreck sites" />
+            <button class="gallery-btn next" aria-label="Next image">›</button>
+            <div class="gallery-count">1 / 1</div>
+          </div>
           <div class="card-body">
             <div class="tag">Marine Archaeology</div>
             <h3>3D visualisation of historic shipwrecks</h3>
@@ -346,7 +426,12 @@
         </article>
 
         <article class="card">
-          <img src="images/iceland-glacier.jpg" alt="Iceland glacier retreat analysis" />
+          <div class="gallery" data-images='["iceland-glacier.png","iceland-glacier2.png","iceland-glacier3.png"]' data-alt="Iceland glacier retreat analysis">
+            <button class="gallery-btn prev" aria-label="Previous image">‹</button>
+            <img src="iceland-glacier.png" alt="Iceland glacier retreat analysis" />
+            <button class="gallery-btn next" aria-label="Next image">›</button>
+            <div class="gallery-count">1 / 3</div>
+          </div>
           <div class="card-body">
             <div class="tag">Cryosphere Monitoring</div>
             <h3>Mýrdalsjökull glacier retreat and meltwater change</h3>
@@ -356,7 +441,12 @@
         </article>
 
         <article class="card">
-          <img src="images/trysil-forest.jpg" alt="Forest and fungi mapping in Trysil" />
+          <div class="gallery" data-images='["trysil-forest.png","trysil-forest2.png","trysil-forest3.png"]' data-alt="Forest and fungi mapping in Trysil">
+            <button class="gallery-btn prev" aria-label="Previous image">‹</button>
+            <img src="trysil-forest.png" alt="Forest and fungi mapping in Trysil" />
+            <button class="gallery-btn next" aria-label="Next image">›</button>
+            <div class="gallery-count">1 / 3</div>
+          </div>
           <div class="card-body">
             <div class="tag">Master’s Research</div>
             <h3>Boreal forest health, fungi networks, and soil moisture in Trysil</h3>
@@ -366,7 +456,12 @@
         </article>
 
         <article class="card">
-          <img src="images/engskogen-fire.jpg" alt="Wildfire recovery mapping in Sweden" />
+          <div class="gallery" data-images='["engskogen-fire.png"]' data-alt="Wildfire recovery mapping in Sweden">
+            <button class="gallery-btn prev" aria-label="Previous image">‹</button>
+            <img src="engskogen-fire.png" alt="Wildfire recovery mapping in Sweden" />
+            <button class="gallery-btn next" aria-label="Next image">›</button>
+            <div class="gallery-count">1 / 1</div>
+          </div>
           <div class="card-body">
             <div class="tag">Wildfire Recovery</div>
             <h3>Vegetation regeneration after wildfire in Engskogen, Sweden</h3>
@@ -421,4 +516,53 @@
       </div>
 
       <div class="panel">
-        <p><
+        <p><strong>Email:</strong> your.email@example.com</p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/alexandrafjellvik" target="_blank" rel="noreferrer">github.com/alexandrafjellvik</a></p>
+        <p><strong>LinkedIn:</strong> Add your LinkedIn profile here</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      Built for GitHub Pages. You can add more projects later by uploading more images and copying one of the project cards.
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll(".gallery").forEach((gallery) => {
+      const images = JSON.parse(gallery.dataset.images);
+      const alt = gallery.dataset.alt;
+      const img = gallery.querySelector("img");
+      const prevBtn = gallery.querySelector(".prev");
+      const nextBtn = gallery.querySelector(".next");
+      const count = gallery.querySelector(".gallery-count");
+
+      let index = 0;
+
+      function updateGallery() {
+        img.src = images[index];
+        img.alt = alt + " (" + (index + 1) + ")";
+        count.textContent = (index + 1) + " / " + images.length;
+      }
+
+      if (images.length <= 1) {
+        prevBtn.style.display = "none";
+        nextBtn.style.display = "none";
+      }
+
+      prevBtn.addEventListener("click", () => {
+        index = (index - 1 + images.length) % images.length;
+        updateGallery();
+      });
+
+      nextBtn.addEventListener("click", () => {
+        index = (index + 1) % images.length;
+        updateGallery();
+      });
+
+      updateGallery();
+    });
+  </script>
+</body>
+</html>
