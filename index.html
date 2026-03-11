@@ -122,5 +122,46 @@
   </footer>
 
   <script src="scripts/main.js"></script>
+  <script>
+document.querySelectorAll("[data-images]").forEach((gallery) => {
+  const images = JSON.parse(gallery.dataset.images);
+  const imageEl = gallery.querySelector("img");
+  const prevBtn = gallery.querySelector(".prev");
+  const nextBtn = gallery.querySelector(".next");
+  const counter = gallery.querySelector(".gallery-counter");
+
+  let index = 0;
+
+  function updateGallery() {
+    imageEl.src = images[index];
+    if (counter) {
+      counter.textContent = `${index + 1} / ${images.length}`;
+    }
+  }
+
+  if (images.length <= 1) {
+    if (prevBtn) prevBtn.style.display = "none";
+    if (nextBtn) nextBtn.style.display = "none";
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", (event) => {
+      event.preventDefault();
+      index = (index - 1 + images.length) % images.length;
+      updateGallery();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", (event) => {
+      event.preventDefault();
+      index = (index + 1) % images.length;
+      updateGallery();
+    });
+  }
+
+  updateGallery();
+});
+</script>
 </body>
 </html>
