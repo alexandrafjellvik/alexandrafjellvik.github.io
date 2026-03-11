@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alexandra Ania Fjellvik | Portfolio</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <div class="site-name">Alexandra Ania Fjellvik</div>
+      <nav class="site-nav">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT ME</a>
+        <a href="resume.html">RESUME</a>
+        <a href="portfolio.html" class="active">PORTFOLIO</a>
+      </nav>
+    </div>
+  </header>
 
+  <main class="container page-main">
+    <section class="page-hero">
+      <h1>Portfolio</h1>
+      <p>
+        Selected projects in GIS, remote sensing, environmental analysis, and marine mapping.
+      </p>
+    </section>
+
+    <section class="portfolio-list">
+      <article class="portfolio-project" id="mt-st-helens">
+        <div class="project-gallery" data-images='["mt-st-helens.png","mt-st-helens2.png","mt-st-helens3.png"]'>
+          <button class="gallery-arrow prev" type="button">❮</button>
+          <img src="mt-st-helens.png" alt="Mount St Helens terrain analysis" />
+          <button class="gallery-arrow next" type="button">❯</button>
+          <div class="gallery-counter">1 / 3</div>
+        </div>
+        <div class="project-text">
+          <h2>Mount St Helens terrain and lava dome change</h2>
+          <h3>Volcanic Change Detection</h3>
+          <p>
+            Used remote sensing, DEMs, and classification workflows to analyse terrain loss from
+            eruption activity and glacier–lava dome dynamics over time.
+          </p>
+          <p><strong>Methods:</strong> DEM analysis, SVM classification, change quantification</p>
+        </div>
+      </article>
+
+      <article class="portfolio-project" id="hawaii">
+        <div class="project-gallery" data-images='["hawaii-bathymetry.png","hawaii-bathymetry2.png"]'>
+          <button class="gallery-arrow prev" type="button">❮</button>
+          <img src="hawaii-bathymetry.png" alt="Bathymetry maps between Oahu and Kauai" />
+          <button class="gallery-arrow next" type="button">❯</button>
+          <div class="gallery-counter">1 / 2</div>
+        </div>
+        <div class="project-text">
+          <h2>Bathymetric survey design between Oʻahu and Kauaʻi</h2>
+          <h3>Marine Survey Planning</h3>
+          <p>
+            Assessed seabed depth, geomorphology, and sediment characteristics to support survey logistics,
+            vessel selection, and a potential gas pipeline route.
+          </p>
+          <p><strong>Methods:</strong> Bathymetry, nautical chart interpretation, survey costing</p>
+        </div>
+      </article>
+
+      <article class="portfolio-project" id="wrecks">
+        <div class="project-gallery" data-images='["wrecks-3d.png"]'>
+          <button class="gallery-arrow prev" type="button">❮</button>
+          <img src="wrecks-3d.png" alt="3D models of shipwreck sites" />
+          <button class="gallery-arrow next" type="button">❯</button>
+          <div class="gallery-counter">1 / 1</div>
+        </div>
+        <div class="project-text">
+          <h2>3D visualisation of historic shipwrecks</h2>
+          <h3>Marine Archaeology</h3>
+          <p>
+            Combined bathymetric and side scan sonar data to create interpretable 3D wreck models
+            for archaeological diving assessment and hazard review.
+          </p>
+          <p><strong>Methods:</strong> Side scan sonar, bathymetry, 3D modelling</p>
+        </div>
+      </article>
+
+      <article class="portfolio-project" id="iceland">
+        <div class="project-gallery" data-images='["iceland-glacier.png","iceland-glacier2.png","iceland-glacier3.png"]'>
+          <button class="gallery-arrow prev" type="button">❮</button>
+          <img src="iceland-glacier.png" alt="Iceland glacier retreat analysis" />
+          <button class="gallery-arrow next" type="button">❯</button>
+          <div class="gallery-counter">1 / 3</div>
+        </div>
+        <div class="project-text">
+          <h2>Mýrdalsjökull glacier retreat and meltwater change</h2>
+          <h3>Cryosphere Monitoring</h3>
+          <p>
+            Investigated glacial retreat in Iceland across multiple years to quantify ice loss and
+            assess downstream implications for hydropower systems.
+          </p>
+          <p><strong>Methods:</strong> Glacier classification, retreat mapping, area comparison</p>
+        </div>
+      </article>
+
+      <article class="portfolio-project" id="trysil">
+        <div class="project-gallery" data-images='["trysil-forest.png","trysil-forest2.png","trysil-forest3.png"]'>
+          <button class="gallery-arrow prev" type="button">❮</button>
+          <img src="trysil-forest.png" alt="Forest and fungi mapping in Trysil" />
+          <button class="gallery-arrow next" type="button">❯</button>
+          <div class="gallery-counter">1 / 3</div>
+        </div>
+        <div class="project-text">
+          <h2>Boreal forest health, fungi networks, and soil moisture in Trysil</h2>
+          <h3>Master’s Research</h3>
+          <p>
+            Mapped forest composition, ectomycorrhizal fungi associations, and soil moisture dynamics
+            to explore climate resilience and regeneration patterns.
+          </p>
+          <p><strong>Methods:</strong> Multitemporal remote sensing, NDMI, change detection</p>
+        </div>
+      </article>
+
+      <article class="portfolio-project" id="engskogen">
+        <div class="project-gallery" data-images='["engskogen-fire.png"]'>
+          <button class="gallery-arrow prev" type="button">❮</button>
+          <img src="engskogen-fire.png" alt="Wildfire recovery mapping in Sweden" />
+          <button class="gallery-arrow next" type="button">❯</button>
+          <div class="gallery-counter">1 / 1</div>
+        </div>
+        <div class="project-text">
+          <h2>Vegetation regeneration after wildfire in Engskogen, Sweden</h2>
+          <h3>Wildfire Recovery</h3>
+          <p>
+            Used Sentinel-based vegetation indices and SAR backscatter to analyse post-fire recovery
+            and identify change in burned versus non-burned areas.
+          </p>
+          <p><strong>Methods:</strong> NDVI, MSAVI, SAR backscatter, change detection</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © Copyright 2026, Alexandra Ania Fjellvik
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
