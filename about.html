@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alexandra Ania Fjellvik | Home</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <div class="site-name">Alexandra Ania Fjellvik</div>
+      <nav class="site-nav">
+        <a href="index.html" class="active">HOME</a>
+        <a href="about.html">ABOUT ME</a>
+        <a href="resume.html">RESUME</a>
+        <a href="portfolio.html">PORTFOLIO</a>
+      </nav>
+    </div>
+  </header>
 
+  <main>
+    <section class="hero container">
+      <div class="hero-text">
+        <p class="eyebrow">GIS · Remote Sensing · Environmental Analysis</p>
+        <h1>Alexandra Ania Fjellvik</h1>
+        <p class="lead">
+          Hello! Welcome to my portfolio. I work with GIS, remote sensing, environmental mapping,
+          and spatial analysis across land and marine systems. This site features selected project work,
+          maps, and portfolio material.
+        </p>
+        <div class="button-row">
+          <a class="button button-primary" href="portfolio.html">Recent Work</a>
+          <a class="button" href="./Portfolio.pdf" target="_blank" rel="noreferrer">Open PDF Portfolio</a>
+          <a class="button" href="./CV.pdf" target="_blank" rel="noreferrer">Open CV</a>
+        </div>
+      </div>
+
+      <aside class="hero-panel">
+        <h2>Focus Areas</h2>
+        <ul>
+          <li>Remote sensing for environmental change</li>
+          <li>Bathymetry and marine spatial analysis</li>
+          <li>Change detection and landscape monitoring</li>
+          <li>Cartography and geospatial communication</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="container split-home">
+      <div class="home-card">
+        <img src="mt-st-helens.png" alt="Mount St Helens terrain analysis" class="home-feature-image" />
+      </div>
+
+      <div class="home-card home-copy">
+        <h2>ABOUT ME</h2>
+        <p>
+          Hi! My name is Alexandra Ania Fjellvik, and I work with GIS and remote sensing across
+          environmental and marine topics. My background combines geospatial analysis with social geography,
+          allowing me to connect technical mapping with wider landscape and planning contexts.
+        </p>
+        <a class="text-link" href="about.html">More About Me</a>
+      </div>
+    </section>
+
+    <section class="container homepage-highlight">
+      <div class="section-heading">
+        <h2>HIGHLIGHT</h2>
+      </div>
+
+      <article class="highlight-card">
+        <div class="highlight-gallery" data-images='["mt-st-helens.png","mt-st-helens2.png","mt-st-helens3.png"]' data-count="3">
+          <button class="gallery-arrow prev" type="button" aria-label="Previous image">❮</button>
+          <img src="mt-st-helens.png" alt="Mount St Helens highlight image" />
+          <button class="gallery-arrow next" type="button" aria-label="Next image">❯</button>
+          <div class="gallery-counter">1 / 3</div>
+        </div>
+
+        <div class="highlight-text">
+          <h3>Mount St Helens</h3>
+          <h4>Volcanic terrain and lava dome change analysis</h4>
+          <p>
+            This project used remote sensing, DEMs, and classification workflows to examine terrain loss
+            related to eruption processes and glacier–lava dome dynamics over time.
+          </p>
+          <a class="text-link" href="portfolio.html">More About This Project</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="container latest-work">
+      <div class="section-heading">
+        <h2>LATEST WORK</h2>
+        <p>Selected work in remote sensing, GIS, and environmental mapping.</p>
+      </div>
+
+      <div class="latest-grid">
+        <a class="latest-item" href="portfolio.html#mt-st-helens">Mount St Helens terrain and lava dome change</a>
+        <a class="latest-item" href="portfolio.html#hawaii">Bathymetric survey design between Oʻahu and Kauaʻi</a>
+        <a class="latest-item" href="portfolio.html#wrecks">3D visualisation of historic shipwrecks</a>
+        <a class="latest-item" href="portfolio.html#iceland">Mýrdalsjökull glacier retreat and meltwater change</a>
+        <a class="latest-item" href="portfolio.html#trysil">Boreal forest health and soil moisture in Trysil</a>
+        <a class="latest-item" href="portfolio.html#engskogen">Vegetation regeneration after wildfire in Engskogen</a>
+      </div>
+
+      <div class="center-link">
+        <a class="button button-primary" href="portfolio.html">More Projects</a>
+      </div>
+    </section>
+
+    <section class="container contact-preview">
+      <h2>Contact</h2>
+      <p>Please feel free to contact me by email or through LinkedIn.</p>
+      <a class="text-link" href="about.html#contact-block">Contact Me</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © Copyright 2026, Alexandra Ania Fjellvik
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
