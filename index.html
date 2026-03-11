@@ -3,948 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alexandra Ania Fjellvik | GIS & Remote Sensing Portfolio</title>
-  <style>
-    :root {
-      --bg: #f4f8f8;
-      --surface: #ffffff;
-      --surface-soft: #f7fbfb;
-      --text: #1f2937;
-      --muted: #5f6b76;
-      --line: #dce7e7;
-      --accent: #0f766e;
-      --accent-dark: #115e59;
-      --accent-deep: #164e63;
-      --accent-soft: #e7f6f4;
-      --shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
-      --shadow-lg: 0 18px 50px rgba(15, 23, 42, 0.14);
-      --radius: 22px;
-      --max: 1160px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(15, 118, 110, 0.06), transparent 28%),
-        radial-gradient(circle at top right, rgba(22, 78, 99, 0.05), transparent 30%),
-        var(--bg);
-      line-height: 1.6;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .wrap {
-      width: min(calc(100% - 2rem), var(--max));
-      margin: 0 auto;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(244, 248, 248, 0.9);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(220, 231, 231, 0.85);
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem 0;
-    }
-
-    .brand {
-      font-weight: 700;
-      color: var(--accent-deep);
-      letter-spacing: 0.01em;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      font-size: 0.95rem;
-    }
-
-    .nav-links a {
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .hero {
-      padding: 5.5rem 0 3.25rem;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 0.9rem;
-      padding: 0.35rem 0.75rem;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent-dark);
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    h1 {
-      margin: 0 0 1rem;
-      font-size: clamp(2.4rem, 5vw, 4.7rem);
-      line-height: 1.02;
-      letter-spacing: -0.03em;
-    }
-
-    .lead {
-      font-size: 1.08rem;
-      color: var(--muted);
-      max-width: 62ch;
-      margin-bottom: 1.5rem;
-    }
-
-    .cta-row {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-top: 1.5rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.92rem 1.25rem;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-weight: 600;
-      transition: 0.2s ease;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: white;
-      box-shadow: var(--shadow);
-    }
-
-    .btn-primary:hover {
-      background: var(--accent-dark);
-      text-decoration: none;
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      background: var(--surface);
-      color: var(--text);
-      border-color: var(--line);
-    }
-
-    .btn-secondary:hover {
-      text-decoration: none;
-      border-color: #bfd0d0;
-      transform: translateY(-1px);
-    }
-
-    .hero-panel {
-      background: linear-gradient(135deg, #164e63, #0f766e);
-      color: white;
-      border-radius: var(--radius);
-      padding: 2rem;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .hero-panel h2 {
-      margin-top: 0;
-      margin-bottom: 1rem;
-      font-size: 1.2rem;
-    }
-
-    .hero-panel ul {
-      margin: 0;
-      padding-left: 1.2rem;
-    }
-
-    .hero-panel li + li {
-      margin-top: 0.55rem;
-    }
-
-    section {
-      padding: 2rem 0 4rem;
-    }
-
-    .section-head {
-      margin-bottom: 1.5rem;
-    }
-
-    .section-head h2 {
-      margin: 0 0 0.5rem;
-      font-size: 1.9rem;
-      letter-spacing: -0.02em;
-    }
-
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 68ch;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 1.4rem;
-    }
-
-    .panel {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      box-shadow: var(--shadow);
-    }
-
-    .panel h3 {
-      margin-top: 0;
-      margin-bottom: 0.9rem;
-      font-size: 1.15rem;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.8rem;
-    }
-
-    .stat {
-      background: var(--surface-soft);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 0.9rem;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 1.2rem;
-      color: var(--accent-deep);
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
-    }
-
-    .skill {
-      padding: 0.55rem 0.8rem;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: var(--surface-soft);
-      font-size: 0.92rem;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.4rem;
-    }
-
-    .project-card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .gallery {
-      position: relative;
-      background: var(--surface-soft);
-      padding: 1rem;
-      min-height: 320px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: auto;
-      max-height: 420px;
-      object-fit: contain;
-      border-radius: 12px;
-      background: var(--surface-soft);
-    }
-
-    .gallery-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 2.5rem;
-      height: 2.5rem;
-      border: none;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.96);
-      color: #0f172a;
-      font-size: 1.35rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: var(--shadow);
-      z-index: 2;
-    }
-
-    .gallery-btn.prev { left: 1rem; }
-    .gallery-btn.next { right: 1rem; }
-
-    .gallery-count {
-      position: absolute;
-      right: 1rem;
-      bottom: 1rem;
-      background: rgba(15, 23, 42, 0.72);
-      color: white;
-      padding: 0.3rem 0.65rem;
-      border-radius: 999px;
-      font-size: 0.82rem;
-      z-index: 2;
-    }
-
-    .gallery-hint {
-      position: absolute;
-      left: 1rem;
-      bottom: 1rem;
-      background: rgba(255,255,255,0.95);
-      color: var(--text);
-      padding: 0.3rem 0.65rem;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      border: 1px solid rgba(220, 231, 231, 0.95);
-      z-index: 2;
-    }
-
-    .project-body {
-      padding: 1.35rem;
-    }
-
-    .tag {
-      display: inline-block;
-      margin-bottom: 0.8rem;
-      padding: 0.35rem 0.75rem;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent-deep);
-      font-size: 0.8rem;
-      font-weight: 700;
-    }
-
-    .project-body h3 {
-      margin: 0 0 0.65rem;
-      font-size: 1.22rem;
-      line-height: 1.25;
-    }
-
-    .project-body p {
-      margin: 0 0 0.9rem;
-      color: var(--muted);
-    }
-
-    .meta {
-      font-size: 0.92rem;
-      color: #465569;
-    }
-
-    .contact-panel p {
-      margin: 0.45rem 0;
-    }
-
-    footer {
-      padding: 2rem 0 3rem;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(15, 23, 42, 0.78);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 1.2rem;
-      z-index: 999;
-    }
-
-    .modal.open {
-      display: flex;
-    }
-
-    .modal-content {
-      width: min(1200px, 100%);
-      max-height: 92vh;
-      background: white;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-      display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-    }
-
-    .modal-figure {
-      position: relative;
-      background: var(--surface-soft);
-      padding: 1.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 500px;
-    }
-
-    .modal-figure img {
-      max-width: 100%;
-      max-height: 78vh;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      border-radius: 12px;
-    }
-
-    .modal-panel {
-      padding: 1.5rem;
-      border-left: 1px solid var(--line);
-      overflow-y: auto;
-    }
-
-    .modal-panel h3 {
-      margin-top: 0;
-      margin-bottom: 0.75rem;
-      font-size: 1.4rem;
-      line-height: 1.2;
-    }
-
-    .modal-panel p {
-      color: var(--muted);
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      width: 2.6rem;
-      height: 2.6rem;
-      border: none;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.96);
-      font-size: 1.3rem;
-      cursor: pointer;
-      box-shadow: var(--shadow);
-      z-index: 3;
-    }
-
-    .modal-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 2.8rem;
-      height: 2.8rem;
-      border: none;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.96);
-      font-size: 1.45rem;
-      cursor: pointer;
-      box-shadow: var(--shadow);
-      z-index: 3;
-    }
-
-    .modal-nav.prev { left: 1rem; }
-    .modal-nav.next { right: 1rem; }
-
-    .modal-count {
-      position: absolute;
-      bottom: 1rem;
-      right: 1rem;
-      background: rgba(15, 23, 42, 0.76);
-      color: white;
-      padding: 0.3rem 0.7rem;
-      border-radius: 999px;
-      font-size: 0.85rem;
-      z-index: 3;
-    }
-
-    @media (max-width: 980px) {
-      .hero,
-      .about-grid,
-      .project-grid,
-      .modal-content {
-        grid-template-columns: 1fr;
-      }
-
-      .modal-panel {
-        border-left: none;
-        border-top: 1px solid var(--line);
-      }
-    }
-
-    @media (max-width: 700px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .gallery {
-        min-height: 250px;
-      }
-
-      .gallery img {
-        max-height: 300px;
-      }
-
-      .stats {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        padding-top: 4.5rem;
-      }
-    }
-  </style>
+  <title>Alexandra Ania Fjellvik | Home</title>
+  <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <nav>
-        <div class="brand">Alexandra Ania Fjellvik</div>
-        <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Tools</a>
-          <a href="#contact">Contact</a>
-        </div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <div class="site-name">Alexandra Ania Fjellvik</div>
+      <nav class="site-nav">
+        <a href="index.html" class="active">HOME</a>
+        <a href="about.html">ABOUT ME</a>
+        <a href="resume.html">RESUME</a>
+        <a href="portfolio.html">PORTFOLIO</a>
       </nav>
     </div>
   </header>
 
-  <main class="wrap">
-    <section class="hero">
-      <div>
-        <div class="eyebrow">GIS · Remote Sensing · Environmental Analysis</div>
-        <h1>Geospatial analysis for environmental change, landscape processes, and marine systems.</h1>
+  <main>
+    <section class="hero container">
+      <div class="hero-text">
+        <p class="eyebrow">GIS · Remote Sensing · Environmental Analysis</p>
+        <h1>Alexandra Ania Fjellvik</h1>
         <p class="lead">
-          I am a GIS and remote sensing specialist with a master’s degree in Geographic Information Systems and Remote Sensing, a background in social geography, and project experience across environmental mapping, marine spatial analysis, and digital cartography.
+          Hello! Welcome to my portfolio. I work with GIS, remote sensing, environmental mapping,
+          and spatial analysis across land and marine systems. This site features selected project work,
+          maps, and portfolio material.
         </p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#projects">View portfolio</a>
-          <a class="btn btn-secondary" href="./Portfolio.pdf" target="_blank" rel="noreferrer">Open PDF portfolio</a>
-          <a class="btn btn-secondary" href="./CV.pdf" target="_blank" rel="noreferrer">Open CV</a>
+        <div class="button-row">
+          <a class="button button-primary" href="portfolio.html">Recent Work</a>
+          <a class="button" href="./Portfolio.pdf" target="_blank" rel="noreferrer">Open PDF Portfolio</a>
+          <a class="button" href="./CV.pdf" target="_blank" rel="noreferrer">Open CV</a>
         </div>
       </div>
 
       <aside class="hero-panel">
-        <h2>Focus areas</h2>
+        <h2>Focus Areas</h2>
         <ul>
-          <li>Remote sensing for land cover, cryosphere, and wildfire recovery</li>
-          <li>Marine spatial planning, bathymetry, and seabed interpretation</li>
-          <li>GIS workflows for visualisation, change detection, and decision support</li>
-          <li>Bridging technical geospatial analysis with wider environmental and social context</li>
+          <li>Remote sensing for environmental change</li>
+          <li>Bathymetry and marine spatial analysis</li>
+          <li>Change detection and landscape monitoring</li>
+          <li>Cartography and geospatial communication</li>
         </ul>
       </aside>
     </section>
 
-    <section id="about">
-      <div class="section-head">
-        <h2>About</h2>
-        <p>A concise profile section, similar to a classic GIS portfolio homepage, but tailored to your work and style.</p>
+    <section class="container split-home">
+      <div class="home-card">
+        <img src="mt-st-helens.png" alt="Mount St Helens terrain analysis" class="home-feature-image" />
       </div>
 
-      <div class="about-grid">
-        <div class="panel">
-          <h3>Profile</h3>
+      <div class="home-card home-copy">
+        <h2>ABOUT ME</h2>
+        <p>
+          Hi! My name is Alexandra Ania Fjellvik, and I work with GIS and remote sensing across
+          environmental and marine topics. My background combines geospatial analysis with social geography,
+          allowing me to connect technical mapping with wider landscape and planning contexts.
+        </p>
+        <a class="text-link" href="about.html">More About Me</a>
+      </div>
+    </section>
+
+    <section class="container homepage-highlight">
+      <div class="section-heading">
+        <h2>HIGHLIGHT</h2>
+      </div>
+
+      <article class="highlight-card">
+        <div class="highlight-gallery" data-images='["mt-st-helens.png","mt-st-helens2.png","mt-st-helens3.png"]' data-count="3">
+          <button class="gallery-arrow prev" type="button" aria-label="Previous image">❮</button>
+          <img src="mt-st-helens.png" alt="Mount St Helens highlight image" />
+          <button class="gallery-arrow next" type="button" aria-label="Next image">❯</button>
+          <div class="gallery-counter">1 / 3</div>
+        </div>
+
+        <div class="highlight-text">
+          <h3>Mount St Helens</h3>
+          <h4>Volcanic terrain and lava dome change analysis</h4>
           <p>
-            My work combines geospatial analysis, remote sensing, and environmental interpretation to communicate complex spatial patterns in a clear and practical way. I have experience working with terrestrial and marine datasets, with projects spanning glacier retreat, wildfire regeneration, volcanic terrain change, forest resilience, and bathymetric analysis.
+            This project used remote sensing, DEMs, and classification workflows to examine terrain loss
+            related to eruption processes and glacier–lava dome dynamics over time.
           </p>
-          <p>
-            Alongside technical GIS skills, my background in social geography helps me think about how spatial data connects to land use, planning, environmental management, and decision-making.
-          </p>
+          <a class="text-link" href="portfolio.html">More About This Project</a>
         </div>
+      </article>
+    </section>
 
-        <div class="panel">
-          <h3>At a glance</h3>
-          <div class="stats">
-            <div class="stat">
-              <strong>6</strong>
-              Selected portfolio projects
-            </div>
-            <div class="stat">
-              <strong>GIS + RS</strong>
-              Technical specialism
-            </div>
-            <div class="stat">
-              <strong>Marine + Land</strong>
-              Thematic range
-            </div>
-            <div class="stat">
-              <strong>Maps + Analysis</strong>
-              Main outputs
-            </div>
-          </div>
-        </div>
+    <section class="container latest-work">
+      <div class="section-heading">
+        <h2>LATEST WORK</h2>
+        <p>Selected work in remote sensing, GIS, and environmental mapping.</p>
+      </div>
+
+      <div class="latest-grid">
+        <a class="latest-item" href="portfolio.html#mt-st-helens">Mount St Helens terrain and lava dome change</a>
+        <a class="latest-item" href="portfolio.html#hawaii">Bathymetric survey design between Oʻahu and Kauaʻi</a>
+        <a class="latest-item" href="portfolio.html#wrecks">3D visualisation of historic shipwrecks</a>
+        <a class="latest-item" href="portfolio.html#iceland">Mýrdalsjökull glacier retreat and meltwater change</a>
+        <a class="latest-item" href="portfolio.html#trysil">Boreal forest health and soil moisture in Trysil</a>
+        <a class="latest-item" href="portfolio.html#engskogen">Vegetation regeneration after wildfire in Engskogen</a>
+      </div>
+
+      <div class="center-link">
+        <a class="button button-primary" href="portfolio.html">More Projects</a>
       </div>
     </section>
 
-    <section id="projects">
-      <div class="section-head">
-        <h2>Selected Projects</h2>
-        <p>Click any project image to open a larger view. Use the arrows to move through each project’s images.</p>
-      </div>
-
-      <div class="project-grid">
-        <article class="project-card">
-          <div class="gallery"
-               data-images='["mt-st-helens.png","mt-st-helens2.png","mt-st-helens3.png"]'
-               data-alt="Mount St Helens terrain analysis"
-               data-title="Mount St Helens terrain and lava dome change"
-               data-tag="Volcanic Change Detection"
-               data-description="Used remote sensing, DEMs, and classification workflows to analyse terrain loss from the eruption and glacier-lava dome dynamics over time."
-               data-meta="Methods: DEM analysis, SVM classification, change quantification">
-            <button class="gallery-btn prev" aria-label="Previous image">‹</button>
-            <img src="mt-st-helens.png" alt="Mount St Helens terrain analysis" />
-            <button class="gallery-btn next" aria-label="Next image">›</button>
-            <div class="gallery-hint">Click to enlarge</div>
-            <div class="gallery-count">1 / 3</div>
-          </div>
-          <div class="project-body">
-            <div class="tag">Volcanic Change Detection</div>
-            <h3>Mount St Helens terrain and lava dome change</h3>
-            <p>Used remote sensing, DEMs, and classification workflows to analyse terrain loss from the eruption and glacier-lava dome dynamics over time.</p>
-            <div class="meta">Methods: DEM analysis, SVM classification, change quantification</div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="gallery"
-               data-images='["hawaii-bathymetry.png","hawaii-bathymetry2.png"]'
-               data-alt="Bathymetry maps between Oahu and Kauai"
-               data-title="Bathymetric survey design between Oʻahu and Kauaʻi"
-               data-tag="Marine Survey Planning"
-               data-description="Assessed seabed depth, geomorphology, and sediment characteristics to support survey logistics, vessel selection, and a potential gas pipeline route."
-               data-meta="Methods: Bathymetry, nautical chart interpretation, survey costing">
-            <button class="gallery-btn prev" aria-label="Previous image">‹</button>
-            <img src="hawaii-bathymetry.png" alt="Bathymetry maps between Oahu and Kauai" />
-            <button class="gallery-btn next" aria-label="Next image">›</button>
-            <div class="gallery-hint">Click to enlarge</div>
-            <div class="gallery-count">1 / 2</div>
-          </div>
-          <div class="project-body">
-            <div class="tag">Marine Survey Planning</div>
-            <h3>Bathymetric survey design between Oʻahu and Kauaʻi</h3>
-            <p>Assessed seabed depth, geomorphology, and sediment characteristics to support survey logistics, vessel selection, and a potential gas pipeline route.</p>
-            <div class="meta">Methods: Bathymetry, nautical chart interpretation, survey costing</div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="gallery"
-               data-images='["wrecks-3d.png"]'
-               data-alt="3D models of shipwreck sites"
-               data-title="3D visualisation of historic shipwrecks"
-               data-tag="Marine Archaeology"
-               data-description="Combined bathymetric and side scan sonar data to create interpretable 3D wreck models for archaeological diving assessment and hazard review."
-               data-meta="Methods: Side scan sonar, bathymetry, 3D modelling">
-            <button class="gallery-btn prev" aria-label="Previous image">‹</button>
-            <img src="wrecks-3d.png" alt="3D models of shipwreck sites" />
-            <button class="gallery-btn next" aria-label="Next image">›</button>
-            <div class="gallery-hint">Click to enlarge</div>
-            <div class="gallery-count">1 / 1</div>
-          </div>
-          <div class="project-body">
-            <div class="tag">Marine Archaeology</div>
-            <h3>3D visualisation of historic shipwrecks</h3>
-            <p>Combined bathymetric and side scan sonar data to create interpretable 3D wreck models for archaeological diving assessment and hazard review.</p>
-            <div class="meta">Methods: Side scan sonar, bathymetry, 3D modelling</div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="gallery"
-               data-images='["iceland-glacier.png","iceland-glacier2.png","iceland-glacier3.png"]'
-               data-alt="Iceland glacier retreat analysis"
-               data-title="Mýrdalsjökull glacier retreat and meltwater change"
-               data-tag="Cryosphere Monitoring"
-               data-description="Investigated glacial retreat in Iceland across multiple years to quantify loss of ice and assess downstream implications for hydropower systems."
-               data-meta="Methods: Glacier classification, retreat mapping, area comparison">
-            <button class="gallery-btn prev" aria-label="Previous image">‹</button>
-            <img src="iceland-glacier.png" alt="Iceland glacier retreat analysis" />
-            <button class="gallery-btn next" aria-label="Next image">›</button>
-            <div class="gallery-hint">Click to enlarge</div>
-            <div class="gallery-count">1 / 3</div>
-          </div>
-          <div class="project-body">
-            <div class="tag">Cryosphere Monitoring</div>
-            <h3>Mýrdalsjökull glacier retreat and meltwater change</h3>
-            <p>Investigated glacial retreat in Iceland across multiple years to quantify loss of ice and assess downstream implications for hydropower systems.</p>
-            <div class="meta">Methods: Glacier classification, retreat mapping, area comparison</div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="gallery"
-               data-images='["trysil-forest.png","trysil-forest2.png","trysil-forest3.png"]'
-               data-alt="Forest and fungi mapping in Trysil"
-               data-title="Boreal forest health, fungi networks, and soil moisture in Trysil"
-               data-tag="Master’s Research"
-               data-description="Mapped forest composition, ectomycorrhizal fungi associations, and soil moisture dynamics to explore climate resilience and forest regeneration patterns."
-               data-meta="Methods: Multitemporal remote sensing, NDMI, change detection">
-            <button class="gallery-btn prev" aria-label="Previous image">‹</button>
-            <img src="trysil-forest.png" alt="Forest and fungi mapping in Trysil" />
-            <button class="gallery-btn next" aria-label="Next image">›</button>
-            <div class="gallery-hint">Click to enlarge</div>
-            <div class="gallery-count">1 / 3</div>
-          </div>
-          <div class="project-body">
-            <div class="tag">Master’s Research</div>
-            <h3>Boreal forest health, fungi networks, and soil moisture in Trysil</h3>
-            <p>Mapped forest composition, ectomycorrhizal fungi associations, and soil moisture dynamics to explore climate resilience and forest regeneration patterns.</p>
-            <div class="meta">Methods: Multitemporal remote sensing, NDMI, change detection</div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="gallery"
-               data-images='["engskogen-fire.png"]'
-               data-alt="Wildfire recovery mapping in Sweden"
-               data-title="Vegetation regeneration after wildfire in Engskogen, Sweden"
-               data-tag="Wildfire Recovery"
-               data-description="Used Sentinel-based vegetation indices and SAR backscatter to analyse post-fire recovery and identify change in burned versus non-burned areas."
-               data-meta="Methods: NDVI, MSAVI, SAR backscatter, change detection">
-            <button class="gallery-btn prev" aria-label="Previous image">‹</button>
-            <img src="engskogen-fire.png" alt="Wildfire recovery mapping in Sweden" />
-            <button class="gallery-btn next" aria-label="Next image">›</button>
-            <div class="gallery-hint">Click to enlarge</div>
-            <div class="gallery-count">1 / 1</div>
-          </div>
-          <div class="project-body">
-            <div class="tag">Wildfire Recovery</div>
-            <h3>Vegetation regeneration after wildfire in Engskogen, Sweden</h3>
-            <p>Used Sentinel-based vegetation indices and SAR backscatter to analyse post-fire recovery and identify change in burned versus non-burned areas.</p>
-            <div class="meta">Methods: NDVI, MSAVI, SAR backscatter, change detection</div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="section-head">
-        <h2>Tools & Methods</h2>
-        <p>A compact tools section that matches the style of GIS portfolio sites while staying simple to update.</p>
-      </div>
-
-      <div class="panel">
-        <div class="skills">
-          <span class="skill">ArcGIS Pro</span>
-          <span class="skill">QGIS</span>
-          <span class="skill">Python</span>
-          <span class="skill">Google Earth Engine</span>
-          <span class="skill">SNAP</span>
-          <span class="skill">ERDAS Imagine</span>
-          <span class="skill">Remote Sensing</span>
-          <span class="skill">Bathymetry</span>
-          <span class="skill">Side Scan Sonar</span>
-          <span class="skill">DEM Analysis</span>
-          <span class="skill">Change Detection</span>
-          <span class="skill">Spatial Analysis</span>
-          <span class="skill">Cartography</span>
-          <span class="skill">Environmental Mapping</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="section-head">
-        <h2>Contact</h2>
-        <p>Replace the placeholders below with your preferred public contact details.</p>
-      </div>
-
-      <div class="panel contact-panel">
-        <p><strong>Email:</strong> your.email@example.com</p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/alexandrafjellvik" target="_blank" rel="noreferrer">github.com/alexandrafjellvik</a></p>
-        <p><strong>LinkedIn:</strong> Add your LinkedIn profile here</p>
-      </div>
+    <section class="container contact-preview">
+      <h2>Contact</h2>
+      <p>Please feel free to contact me by email or through LinkedIn.</p>
+      <a class="text-link" href="about.html#contact-block">Contact Me</a>
     </section>
   </main>
 
-  <footer>
-    <div class="wrap">
-      Built for GitHub Pages. New projects can be added later by duplicating a project card and updating the image filenames and text.
+  <footer class="site-footer">
+    <div class="container">
+      © Copyright 2026, Alexandra Ania Fjellvik
     </div>
   </footer>
 
-  <div class="modal" id="imageModal">
-    <div class="modal-content">
-      <div class="modal-figure">
-        <button class="modal-close" aria-label="Close">×</button>
-        <button class="modal-nav prev" aria-label="Previous image">‹</button>
-        <img id="modalImage" src="" alt="" />
-        <button class="modal-nav next" aria-label="Next image">›</button>
-        <div class="modal-count" id="modalCount"></div>
-      </div>
-      <div class="modal-panel">
-        <div class="tag" id="modalTag"></div>
-        <h3 id="modalTitle"></h3>
-        <p id="modalDescription"></p>
-        <div class="meta" id="modalMeta"></div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    document.querySelectorAll(".gallery").forEach((gallery) => {
-      const images = JSON.parse(gallery.dataset.images);
-      const alt = gallery.dataset.alt;
-      const img = gallery.querySelector("img");
-      const prevBtn = gallery.querySelector(".prev");
-      const nextBtn = gallery.querySelector(".next");
-      const count = gallery.querySelector(".gallery-count");
-
-      let index = 0;
-
-      function updateGallery() {
-        img.src = images[index];
-        img.alt = alt + " (" + (index + 1) + ")";
-        count.textContent = (index + 1) + " / " + images.length;
-      }
-
-      if (images.length <= 1) {
-        prevBtn.style.display = "none";
-        nextBtn.style.display = "none";
-      }
-
-      prevBtn.addEventListener("click", (event) => {
-        event.stopPropagation();
-        index = (index - 1 + images.length) % images.length;
-        updateGallery();
-      });
-
-      nextBtn.addEventListener("click", (event) => {
-        event.stopPropagation();
-        index = (index + 1) % images.length;
-        updateGallery();
-      });
-
-      gallery.addEventListener("click", () => {
-        openModal(gallery, index);
-      });
-
-      updateGallery();
-    });
-
-    const modal = document.getElementById("imageModal");
-    const modalImage = document.getElementById("modalImage");
-    const modalCount = document.getElementById("modalCount");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalTag = document.getElementById("modalTag");
-    const modalDescription = document.getElementById("modalDescription");
-    const modalMeta = document.getElementById("modalMeta");
-    const modalClose = document.querySelector(".modal-close");
-    const modalPrev = document.querySelector(".modal-nav.prev");
-    const modalNext = document.querySelector(".modal-nav.next");
-
-    let modalImages = [];
-    let modalAlt = "";
-    let modalIndex = 0;
-
-    function updateModal() {
-      modalImage.src = modalImages[modalIndex];
-      modalImage.alt = modalAlt + " (" + (modalIndex + 1) + ")";
-      modalCount.textContent = (modalIndex + 1) + " / " + modalImages.length;
-
-      if (modalImages.length <= 1) {
-        modalPrev.style.display = "none";
-        modalNext.style.display = "none";
-      } else {
-        modalPrev.style.display = "block";
-        modalNext.style.display = "block";
-      }
-    }
-
-    function openModal(gallery, startIndex) {
-      modalImages = JSON.parse(gallery.dataset.images);
-      modalAlt = gallery.dataset.alt;
-      modalIndex = startIndex || 0;
-
-      modalTitle.textContent = gallery.dataset.title || "";
-      modalTag.textContent = gallery.dataset.tag || "";
-      modalDescription.textContent = gallery.dataset.description || "";
-      modalMeta.textContent = gallery.dataset.meta || "";
-
-      updateModal();
-      modal.classList.add("open");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeModal() {
-      modal.classList.remove("open");
-      document.body.style.overflow = "";
-    }
-
-    modalPrev.addEventListener("click", () => {
-      modalIndex = (modalIndex - 1 + modalImages.length) % modalImages.length;
-      updateModal();
-    });
-
-    modalNext.addEventListener("click", () => {
-      modalIndex = (modalIndex + 1) % modalImages.length;
-      updateModal();
-    });
-
-    modalClose.addEventListener("click", closeModal);
-
-    modal.addEventListener("click", (event) => {
-      if (event.target === modal) {
-        closeModal();
-      }
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (!modal.classList.contains("open")) return;
-
-      if (event.key === "Escape") closeModal();
-      if (event.key === "ArrowLeft" && modalImages.length > 1) {
-        modalIndex = (modalIndex - 1 + modalImages.length) % modalImages.length;
-        updateModal();
-      }
-      if (event.key === "ArrowRight" && modalImages.length > 1) {
-        modalIndex = (modalIndex + 1) % modalImages.length;
-        updateModal();
-      }
-    });
-  </script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
