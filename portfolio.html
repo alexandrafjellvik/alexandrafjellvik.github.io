@@ -19,232 +19,146 @@
     </div>
   </header>
 
-  <main class="container page-main">
-    <section class="page-hero">
-      <h1>Portfolio</h1>
-      <p>
-        Selected projects in GIS, remote sensing, environmental analysis, and marine mapping.
-      </p>
+  <main>
+    <section class="about-title-section">
+      <div class="container">
+        <h1>PORTFOLIO</h1>
+      </div>
     </section>
 
-    <section class="portfolio-list">
-      <article class="portfolio-project" id="mt-st-helens">
-        <div class="project-gallery" data-images='["mt-st-helens.png","mt-st-helens2.png","mt-st-helens3.png"]'>
-          <button class="gallery-arrow prev" type="button">❮</button>
-          <img src="mt-st-helens.png" alt="Mount St Helens terrain analysis" />
-          <button class="gallery-arrow next" type="button">❯</button>
-          <div class="gallery-counter">1 / 3</div>
+    <section class="portfolio-filter-section">
+      <div class="container">
+        <div class="portfolio-controls" id="myBtnContainer">
+          <button class="portbtn portactive" onclick="filterSelection('all')">Show all</button>
+          <button class="portbtn" onclick="filterSelection('remote-sensing')">Remote Sensing</button>
+          <button class="portbtn" onclick="filterSelection('gis')">GIS</button>
+          <button class="portbtn" onclick="filterSelection('marine')">Marine</button>
+          <button class="portbtn" onclick="filterSelection('environmental')">Environmental</button>
+          <button class="portbtn" onclick="filterSelection('web-mapping')">Web Mapping</button>
         </div>
-        <div class="project-text">
-          <h2>Mount St Helens terrain and lava dome change</h2>
-          <h3>Volcanic Change Detection</h3>
-          <p>
-            Used remote sensing, DEMs, and classification workflows to analyse terrain loss from
-            eruption activity and glacier–lava dome dynamics over time.
-          </p>
-          <p><strong>Methods:</strong> DEM analysis, SVM classification, change quantification</p>
-        </div>
-      </article>
 
-      <article class="portfolio-project" id="hawaii">
-        <div class="project-gallery" data-images='["hawaii-bathymetry.png","hawaii-bathymetry2.png"]'>
-          <button class="gallery-arrow prev" type="button">❮</button>
-          <img src="hawaii-bathymetry.png" alt="Bathymetry maps between Oahu and Kauai" />
-          <button class="gallery-arrow next" type="button">❯</button>
-          <div class="gallery-counter">1 / 2</div>
-        </div>
-        <div class="project-text">
-          <h2>Bathymetric survey design between Oʻahu and Kauaʻi</h2>
-          <h3>Marine Survey Planning</h3>
-          <p>
-            Assessed seabed depth, geomorphology, and sediment characteristics to support survey logistics,
-            vessel selection, and a potential gas pipeline route.
-          </p>
-          <p><strong>Methods:</strong> Bathymetry, nautical chart interpretation, survey costing</p>
-        </div>
-      </article>
+        <div class="portrow">
 
-      <article class="portfolio-project" id="wrecks">
-        <div class="project-gallery" data-images='["wrecks-3d.png"]'>
-          <button class="gallery-arrow prev" type="button">❮</button>
-          <img src="wrecks-3d.png" alt="3D models of shipwreck sites" />
-          <button class="gallery-arrow next" type="button">❯</button>
-          <div class="gallery-counter">1 / 1</div>
-        </div>
-        <div class="project-text">
-          <h2>3D visualisation of historic shipwrecks</h2>
-          <h3>Marine Archaeology</h3>
-          <p>
-            Combined bathymetric and side scan sonar data to create interpretable 3D wreck models
-            for archaeological diving assessment and hazard review.
-          </p>
-          <p><strong>Methods:</strong> Side scan sonar, bathymetry, 3D modelling</p>
-        </div>
-      </article>
+          <div class="portcolumn gis remote-sensing environmental">
+            <div class="portcontent">
+              <a href="portfolio.html#mt-st-helens" class="port_txt">
+                <img src="mt-st-helens.png" alt="Mount St Helens terrain and lava dome change" />
+                <h3>Mount St Helens terrain and lava dome change</h3>
+                <h4>Volcanic change detection</h4>
+              </a>
+            </div>
+          </div>
 
-      <article class="portfolio-project" id="iceland">
-        <div class="project-gallery" data-images='["iceland-glacier.png","iceland-glacier2.png","iceland-glacier3.png"]'>
-          <button class="gallery-arrow prev" type="button">❮</button>
-          <img src="iceland-glacier.png" alt="Iceland glacier retreat analysis" />
-          <button class="gallery-arrow next" type="button">❯</button>
-          <div class="gallery-counter">1 / 3</div>
-        </div>
-        <div class="project-text">
-          <h2>Mýrdalsjökull glacier retreat and meltwater change</h2>
-          <h3>Cryosphere Monitoring</h3>
-          <p>
-            Investigated glacial retreat in Iceland across multiple years to quantify ice loss and
-            assess downstream implications for hydropower systems.
-          </p>
-          <p><strong>Methods:</strong> Glacier classification, retreat mapping, area comparison</p>
-        </div>
-      </article>
+          <div class="portcolumn gis marine environmental">
+            <div class="portcontent">
+              <a href="portfolio.html#hawaii" class="port_txt">
+                <img src="hawaii-bathymetry.png" alt="Bathymetric survey design between Oʻahu and Kauaʻi" />
+                <h3>Bathymetric survey design between Oʻahu and Kauaʻi</h3>
+                <h4>Marine survey planning</h4>
+              </a>
+            </div>
+          </div>
 
-      <article class="portfolio-project" id="trysil">
-        <div class="project-gallery" data-images='["trysil-forest.png","trysil-forest2.png","trysil-forest3.png"]'>
-          <button class="gallery-arrow prev" type="button">❮</button>
-          <img src="trysil-forest.png" alt="Forest and fungi mapping in Trysil" />
-          <button class="gallery-arrow next" type="button">❯</button>
-          <div class="gallery-counter">1 / 3</div>
-        </div>
-        <div class="project-text">
-          <h2>Boreal forest health, fungi networks, and soil moisture in Trysil</h2>
-          <h3>Master’s Research</h3>
-          <p>
-            Mapped forest composition, ectomycorrhizal fungi associations, and soil moisture dynamics
-            to explore climate resilience and regeneration patterns.
-          </p>
-          <p><strong>Methods:</strong> Multitemporal remote sensing, NDMI, change detection</p>
-        </div>
-      </article>
+          <div class="portcolumn gis marine">
+            <div class="portcontent">
+              <a href="portfolio.html#wrecks" class="port_txt">
+                <img src="wrecks-3d.png" alt="3D visualisation of historic shipwrecks" />
+                <h3>3D visualisation of historic shipwrecks</h3>
+                <h4>Marine archaeology</h4>
+              </a>
+            </div>
+          </div>
 
-      <article class="portfolio-project" id="engskogen">
-        <div class="project-gallery" data-images='["engskogen-fire.png"]'>
-          <button class="gallery-arrow prev" type="button">❮</button>
-          <img src="engskogen-fire.png" alt="Wildfire recovery mapping in Sweden" />
-          <button class="gallery-arrow next" type="button">❯</button>
-          <div class="gallery-counter">1 / 1</div>
-        </div>
-        <div class="project-text">
-          <h2>Vegetation regeneration after wildfire in Engskogen, Sweden</h2>
-          <h3>Wildfire Recovery</h3>
-          <p>
-            Used Sentinel-based vegetation indices and SAR backscatter to analyse post-fire recovery
-            and identify change in burned versus non-burned areas.
-          </p>
-          <p><strong>Methods:</strong> NDVI, MSAVI, SAR backscatter, change detection</p>
-        </div>
-      </article>
+          <div class="portcolumn gis remote-sensing environmental">
+            <div class="portcontent">
+              <a href="portfolio.html#iceland" class="port_txt">
+                <img src="iceland-glacier.png" alt="Mýrdalsjökull glacier retreat and meltwater change" />
+                <h3>Mýrdalsjökull glacier retreat and meltwater change</h3>
+                <h4>Cryosphere monitoring</h4>
+              </a>
+            </div>
+          </div>
 
-      <article class="portfolio-project" id="kelp">
-        <div class="project-gallery" data-images='["kelp1.png","kelp2.png","kelp3.png"]'>
-          <button class="gallery-arrow prev" type="button">❮</button>
-          <img src="kelp1.png" alt="Kelp forest monitoring in Norwegian fjords" />
-          <button class="gallery-arrow next" type="button">❯</button>
-          <div class="gallery-counter">1 / 3</div>
-        </div>
-        <div class="project-text">
-          <h2>Google Earth Engine – Kelp Forest Monitoring in Norwegian Fjords</h2>
-          <h3>Ongoing Project</h3>
-          <p>
-            Developing an SVM-based classification workflow in Google Earth Engine to detect kelp forests
-            within user-defined polygons in Norwegian fjords.
-          </p>
-          <ul>
-            <li>Built and tested a remote sensing methodology for kelp mapping in coastal environments</li>
-            <li>Worked with classification logic, polygon-based analysis, and workflow development in GEE</li>
-            <li>Applied project-oriented research and development for a potential SALT-related environmental monitoring use case</li>
-          </ul>
-          <p><strong>Methods:</strong> Google Earth Engine, SVM classification, polygon-based spatial analysis, coastal remote sensing</p>
-        </div>
-      </article>
+          <div class="portcolumn gis remote-sensing environmental">
+            <div class="portcontent">
+              <a href="portfolio.html#trysil" class="port_txt">
+                <img src="trysil-forest.png" alt="Boreal forest health, fungi networks, and soil moisture in Trysil" />
+                <h3>Boreal forest health, fungi networks, and soil moisture in Trysil</h3>
+                <h4>Master’s research</h4>
+              </a>
+            </div>
+          </div>
 
-      <article class="portfolio-project" id="blue-connect">
-        <div class="project-gallery" data-images='["blue-connect1.png","blue-connect2.png","blue-connect3.png"]'>
-          <button class="gallery-arrow prev" type="button">❮</button>
-          <img src="blue-connect1.png" alt="Blue Connect marine protected area project" />
-          <button class="gallery-arrow next" type="button">❯</button>
-          <div class="gallery-counter">1 / 3</div>
-        </div>
-        <div class="project-text">
-          <h2>Blue Connect</h2>
-          <h3>Large International Environmental Project – EU Interreg Funded</h3>
-          <p>
-            Environmental GIS analysis, data compilation, stakeholder mapping, and communication support
-            related to marine protected area potential and Raet National Park.
-          </p>
-          <ul>
-            <li>Contributed to cross-European project collaboration focused on marine protected areas</li>
-            <li>Compiled spatial and environmental information to support analysis and discussion</li>
-            <li>Developed a StoryMap to communicate project goals, findings, and stakeholder-relevant insights</li>
-          </ul>
-          <p><strong>Methods:</strong> Environmental GIS, data compilation, stakeholder mapping, StoryMap communication</p>
-        </div>
-      </article>
+          <div class="portcolumn gis remote-sensing environmental">
+            <div class="portcontent">
+              <a href="portfolio.html#engskogen" class="port_txt">
+                <img src="engskogen-fire.png" alt="Vegetation regeneration after wildfire in Engskogen, Sweden" />
+                <h3>Vegetation regeneration after wildfire in Engskogen, Sweden</h3>
+                <h4>Wildfire recovery</h4>
+              </a>
+            </div>
+          </div>
 
-      <article class="portfolio-project" id="seasketch">
-        <div class="project-gallery" data-images='["seasketch1.png","seasketch2.png","seasketch3.png"]'>
-          <button class="gallery-arrow prev" type="button">❮</button>
-          <img src="seasketch1.png" alt="SeaSketch marine area mapping project" />
-          <button class="gallery-arrow next" type="button">❯</button>
-          <div class="gallery-counter">1 / 3</div>
-        </div>
-        <div class="project-text">
-          <h2>SeaSketch Marine Area Mapping</h2>
-          <h3>Small Project – SALT / Institute of Marine Research</h3>
-          <p>
-            Supported integration and mapping of marine data layers for strategic protection of marine zones.
-          </p>
-          <ul>
-            <li>Worked with marine spatial datasets and digital mapping for conservation planning</li>
-            <li>Helped structure map content for strategic decision support and communication</li>
-          </ul>
-          <p><strong>Methods:</strong> Marine GIS, spatial data integration, digital mapping, conservation planning</p>
-        </div>
-      </article>
+          <div class="portcolumn gis remote-sensing marine environmental">
+            <div class="portcontent">
+              <a href="portfolio.html#kelp" class="port_txt">
+                <img src="kelp1.png" alt="Google Earth Engine kelp forest monitoring in Norwegian fjords" />
+                <h3>Google Earth Engine – Kelp Forest Monitoring in Norwegian Fjords</h3>
+                <h4>Ongoing remote sensing project</h4>
+              </a>
+            </div>
+          </div>
 
-      <article class="portfolio-project" id="small-boat-harbours">
-        <div class="project-gallery" data-images='["harbours1.png","harbours2.png","harbours3.png"]'>
-          <button class="gallery-arrow prev" type="button">❮</button>
-          <img src="harbours1.png" alt="Small boat harbour mapping project" />
-          <button class="gallery-arrow next" type="button">❯</button>
-          <div class="gallery-counter">1 / 3</div>
-        </div>
-        <div class="project-text">
-          <h2>Small Boat Harbour Mapping</h2>
-          <h3>Small Project – Mepex</h3>
-          <p>
-            Supported GIS mapping for legislation on boat-cleaning practices aimed at reducing chemical contamination.
-          </p>
-          <ul>
-            <li>Mapped harbour locations, boat numbers, wash stations, boat ramps, and winter storage areas</li>
-            <li>Contributed geospatial input for environmental regulation and practical policy support</li>
-          </ul>
-          <p><strong>Methods:</strong> GIS mapping, environmental regulation support, geospatial data compilation</p>
-        </div>
-      </article>
+          <div class="portcolumn gis marine environmental web-mapping">
+            <div class="portcontent">
+              <a href="portfolio.html#blue-connect" class="port_txt">
+                <img src="blue-connect1.png" alt="Blue Connect" />
+                <h3>Blue Connect</h3>
+                <h4>Marine protected area analysis and StoryMap communication</h4>
+              </a>
+            </div>
+          </div>
 
-      <article class="portfolio-project" id="plastic-debris">
-        <div class="project-gallery" data-images='["plastic1.png","plastic2.png","plastic3.png"]'>
-          <button class="gallery-arrow prev" type="button">❮</button>
-          <img src="plastic1.png" alt="Plastic debris detection using Sentinel imagery in Svalbard" />
-          <button class="gallery-arrow next" type="button">❯</button>
-          <div class="gallery-counter">1 / 3</div>
+          <div class="portcolumn gis marine environmental web-mapping">
+            <div class="portcontent">
+              <a href="portfolio.html#seasketch" class="port_txt">
+                <img src="seasketch1.png" alt="SeaSketch Marine Area Mapping" />
+                <h3>SeaSketch Marine Area Mapping</h3>
+                <h4>Marine conservation planning</h4>
+              </a>
+            </div>
+          </div>
+
+          <div class="portcolumn gis marine environmental">
+            <div class="portcontent">
+              <a href="portfolio.html#small-boat-harbours" class="port_txt">
+                <img src="harbours1.png" alt="Small Boat Harbour Mapping" />
+                <h3>Small Boat Harbour Mapping</h3>
+                <h4>Environmental regulation support</h4>
+              </a>
+            </div>
+          </div>
+
+          <div class="portcolumn gis remote-sensing marine environmental">
+            <div class="portcontent">
+              <a href="portfolio.html#plastic-debris" class="port_txt">
+                <img src="plastic1.png" alt="Plastic Debris Detection Using Sentinel Imagery in Svalbard" />
+                <h3>Plastic Debris Detection Using Sentinel Imagery in Svalbard</h3>
+                <h4>Exploratory remote sensing project</h4>
+              </a>
+            </div>
+          </div>
+
         </div>
-        <div class="project-text">
-          <h2>Plastic Debris Detection Using Sentinel Imagery in Svalbard</h2>
-          <h3>Exploratory Remote Sensing Project</h3>
-          <p>
-            Explored spectral indices and machine learning approaches for detection of floating marine debris
-            near Moffen Island using Sentinel-2 imagery in Arctic conditions.
-          </p>
-          <ul>
-            <li>Tested remote sensing approaches for a challenging high-latitude marine environment</li>
-            <li>Investigated detection potential using environmental interpretation and imagery analysis</li>
-          </ul>
-          <p><strong>Methods:</strong> Sentinel-2, spectral indices, machine learning exploration, Arctic imagery analysis</p>
-        </div>
-      </article>
+      </div>
+    </section>
+
+    <section class="contact-preview" id="contact-block">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Please feel free to contact me by email or through LinkedIn.</p>
+        <p><a class="text-link" href="mailto:alexandrafjellvik@gmail.com">alexandrafjellvik@gmail.com</a></p>
+      </div>
     </section>
   </main>
 
@@ -254,6 +168,32 @@
     </div>
   </footer>
 
-  <script src="scripts/main.js"></script>
+  <script>
+    filterSelection("all");
+
+    function filterSelection(category) {
+      const items = document.getElementsByClassName("portcolumn");
+
+      for (let i = 0; i < items.length; i++) {
+        items[i].classList.remove("show");
+        if (category === "all" || items[i].className.indexOf(category) > -1) {
+          items[i].classList.add("show");
+        }
+      }
+    }
+
+    const btnContainer = document.getElementById("myBtnContainer");
+    const btns = btnContainer.getElementsByClassName("portbtn");
+
+    for (let i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        const current = document.getElementsByClassName("portactive");
+        if (current.length > 0) {
+          current[0].className = current[0].className.replace(" portactive", "");
+        }
+        this.className += " portactive";
+      });
+    }
+  </script>
 </body>
 </html>
