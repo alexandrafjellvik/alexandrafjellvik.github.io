@@ -424,3 +424,49 @@ h2 {
     padding-left: 1.4rem;
   }
 }
+.resume-minimal {
+  max-width: 860px;
+}
+
+.resume-block {
+  margin-bottom: 2.8rem;
+}
+
+.resume-block h2 {
+  margin-bottom: 1.2rem;
+  font-size: 1.45rem;
+}
+
+.resume-item {
+  margin-bottom: 2rem;
+}
+
+.resume-year {
+  margin: 0 0 0.35rem;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.resume-item h4 {
+  margin: 0 0 0.2rem;
+  font-size: 1rem;
+  color: var(--accent-deep);
+  font-weight: 700;
+}
+
+.resume-item h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.resume-item p,
+.resume-block p {
+  max-width: 780px;
+}
+
+.resume-item p:last-child {
+  margin-bottom: 0;
+}
