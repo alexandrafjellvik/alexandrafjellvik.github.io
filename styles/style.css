@@ -338,6 +338,66 @@ h2 {
   font-size: 0.95rem;
 }
 
+/* Resume page styles */
+
+.resume-clean {
+  margin-bottom: 2rem;
+}
+
+.resume-intro {
+  max-width: 760px;
+  color: var(--muted);
+}
+
+.resume-section {
+  margin-bottom: 2.5rem;
+}
+
+.resume-section h2 {
+  margin-bottom: 1.25rem;
+  font-size: 1.5rem;
+}
+
+.resume-entry {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.resume-entry::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.resume-date {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.resume-entry h4 {
+  margin: 0 0 0.15rem;
+  font-size: 1rem;
+  color: var(--accent-deep);
+}
+
+.resume-entry h3 {
+  margin: 0 0 0.55rem;
+  font-size: 1.2rem;
+}
+
+.resume-entry p {
+  margin: 0;
+  max-width: 850px;
+}
+
 @media (max-width: 860px) {
   .hero,
   .split-home,
@@ -358,5 +418,9 @@ h2 {
   .highlight-gallery img,
   .project-gallery img {
     max-height: 320px;
+  }
+
+  .resume-entry {
+    padding-left: 1.4rem;
   }
 }
