@@ -101,6 +101,11 @@
         <a class="latest-item" href="portfolio.html#iceland">Mýrdalsjökull glacier retreat and meltwater change</a>
         <a class="latest-item" href="portfolio.html#trysil">Boreal forest health and soil moisture in Trysil</a>
         <a class="latest-item" href="portfolio.html#engskogen">Vegetation regeneration after wildfire in Engskogen</a>
+        <a class="latest-item" href="portfolio.html#kelp">Google Earth Engine – Kelp Forest Monitoring in Norwegian Fjords</a>
+        <a class="latest-item" href="portfolio.html#blue-connect">Blue Connect</a>
+        <a class="latest-item" href="portfolio.html#seasketch">SeaSketch Marine Area Mapping</a>
+        <a class="latest-item" href="portfolio.html#small-boat-harbours">Small Boat Harbour Mapping</a>
+        <a class="latest-item" href="portfolio.html#plastic-debris">Plastic Debris Detection Using Sentinel Imagery in Svalbard</a>
       </div>
 
       <div class="center-link">
@@ -122,5 +127,46 @@
   </footer>
 
   <script src="scripts/main.js"></script>
+  <script>
+document.querySelectorAll("[data-images]").forEach((gallery) => {
+  const images = JSON.parse(gallery.dataset.images);
+  const imageEl = gallery.querySelector("img");
+  const prevBtn = gallery.querySelector(".prev");
+  const nextBtn = gallery.querySelector(".next");
+  const counter = gallery.querySelector(".gallery-counter");
+
+  let index = 0;
+
+  function updateGallery() {
+    imageEl.src = images[index];
+    if (counter) {
+      counter.textContent = `${index + 1} / ${images.length}`;
+    }
+  }
+
+  if (images.length <= 1) {
+    if (prevBtn) prevBtn.style.display = "none";
+    if (nextBtn) nextBtn.style.display = "none";
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", (event) => {
+      event.preventDefault();
+      index = (index - 1 + images.length) % images.length;
+      updateGallery();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", (event) => {
+      event.preventDefault();
+      index = (index + 1) % images.length;
+      updateGallery();
+    });
+  }
+
+  updateGallery();
+});
+</script>
 </body>
 </html>
