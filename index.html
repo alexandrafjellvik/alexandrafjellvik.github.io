@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alexandra Ania Fjellvik | Home</title>
+  <meta
+    name="description"
+    content="Welcome to my portfolio. I work with GIS, remote sensing, environmental mapping, and spatial analysis across land and marine systems."
+  />
   <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
@@ -20,103 +24,198 @@
   </header>
 
   <main>
-    <section class="hero container">
-      <div class="hero-text">
-        <p class="eyebrow">GIS · Remote Sensing · Environmental Analysis</p>
-        <h1>Alexandra Ania Fjellvik</h1>
-        <p class="lead">
-          Hello! Welcome to my portfolio. I work with GIS, remote sensing, environmental mapping,
-          and spatial analysis across land and marine systems. This site features selected project work,
-          maps, and portfolio material.
-        </p>
-        <div class="button-row">
-          <a class="button button-primary" href="portfolio.html">Recent Work</a>
-          <a class="button" href="./Portfolio.pdf" target="_blank" rel="noreferrer">Open PDF Portfolio</a>
-          <a class="button" href="./CV.pdf" target="_blank" rel="noreferrer">Open CV</a>
-        </div>
-      </div>
-
-      <aside class="hero-panel">
-        <h2>Focus Areas</h2>
-        <ul>
-          <li>Remote sensing for environmental change</li>
-          <li>Bathymetry and marine spatial analysis</li>
-          <li>Change detection and landscape monitoring</li>
-          <li>Cartography and geospatial communication</li>
-        </ul>
-      </aside>
-    </section>
-
-    <section class="container split-home">
-      <div class="home-card">
-        <img src="images/mt-st-helens.png" alt="Mount St Helens terrain analysis" class="home-feature-image" />
-      </div>
-
-      <div class="home-card home-copy">
-        <h2>ABOUT ME</h2>
-        <p>
-          Hi! My name is Alexandra Ania Fjellvik, and I work with GIS and remote sensing across
-          environmental and marine topics. My background combines geospatial analysis with social geography,
-          allowing me to connect technical mapping with wider landscape and planning contexts.
-        </p>
-        <a class="text-link" href="about.html">More About Me</a>
-      </div>
-    </section>
-
-    <section class="container homepage-highlight">
-      <div class="section-heading">
-        <h2>HIGHLIGHT</h2>
-      </div>
-
-      <article class="highlight-card">
-        <div class="highlight-gallery" data-images='["images/mt-st-helens.png","images/mt-st-helens2.png","images/mt-st-helens3.png"]' data-count="3">
-          <button class="gallery-arrow prev" type="button" aria-label="Previous image">❮</button>
-          <img src="images/mt-st-helens.png" alt="Mount St Helens highlight image" />
-          <button class="gallery-arrow next" type="button" aria-label="Next image">❯</button>
-          <div class="gallery-counter">1 / 3</div>
-        </div>
-
-        <div class="highlight-text">
-          <h3>Mount St Helens</h3>
-          <h4>Volcanic terrain and lava dome change analysis</h4>
-          <p>
-            This project used remote sensing, DEMs, and classification workflows to examine terrain loss
-            related to eruption processes and glacier–lava dome dynamics over time.
+    <!-- Hero -->
+    <section class="home-hero-alt">
+      <div class="container home-hero-grid">
+        <div class="home-hero-left">
+          <p class="eyebrow">GIS · Remote Sensing · Environmental Analysis</p>
+          <h1>Alexandra Ania Fjellvik</h1>
+          <p class="lead">
+            Hello! Welcome to my portfolio. I work with GIS, remote sensing, environmental mapping,
+            and spatial analysis across land and marine systems. This site features selected project work,
+            maps, and portfolio material.
           </p>
-          <a class="text-link" href="portfolio.html">More About This Project</a>
+
+          <div class="button-row">
+            <a class="button button-primary" href="portfolio.html">Recent Work</a>
+            <a class="button" href="./Portfolio.pdf" target="_blank" rel="noreferrer">Open PDF Portfolio</a>
+            <a class="button" href="./CV.pdf" target="_blank" rel="noreferrer">Open CV</a>
+          </div>
         </div>
-      </article>
-    </section>
 
-    <section class="container latest-work">
-      <div class="section-heading">
-        <h2>LATEST WORK</h2>
-        <p>Selected work in remote sensing, GIS, and environmental mapping.</p>
-      </div>
-
-      <div class="latest-grid">
-        <a class="latest-item" href="portfolio.html#mt-st-helens">Mount St Helens terrain and lava dome change</a>
-        <a class="latest-item" href="portfolio.html#hawaii">Bathymetric survey design between Oʻahu and Kauaʻi</a>
-        <a class="latest-item" href="portfolio.html#wrecks">3D visualisation of historic shipwrecks</a>
-        <a class="latest-item" href="portfolio.html#iceland">Mýrdalsjökull glacier retreat and meltwater change</a>
-        <a class="latest-item" href="portfolio.html#trysil">Boreal forest health and soil moisture in Trysil</a>
-        <a class="latest-item" href="portfolio.html#engskogen">Vegetation regeneration after wildfire in Engskogen</a>
-        <a class="latest-item" href="portfolio.html#kelp">Google Earth Engine – Kelp Forest Monitoring in Norwegian Fjords</a>
-        <a class="latest-item" href="portfolio.html#blue-connect">Blue Connect</a>
-        <a class="latest-item" href="portfolio.html#seasketch">SeaSketch Marine Area Mapping</a>
-        <a class="latest-item" href="portfolio.html#small-boat-harbours">Small Boat Harbour Mapping</a>
-        <a class="latest-item" href="portfolio.html#plastic-debris">Plastic Debris Detection Using Sentinel Imagery in Svalbard</a>
-      </div>
-
-      <div class="center-link">
-        <a class="button button-primary" href="portfolio.html">More Projects</a>
+        <div class="home-hero-right">
+          <img src="images/mt-st-helens.png" alt="Featured geospatial project image" class="home-hero-image" />
+        </div>
       </div>
     </section>
 
-    <section class="container contact-preview">
-      <h2>Contact</h2>
-      <p>Please feel free to contact me by email or through LinkedIn.</p>
-      <a class="text-link" href="about.html#contact-block">Contact Me</a>
+    <!-- About -->
+    <section class="home-about-alt">
+      <div class="container home-about-grid">
+        <div class="home-about-image-wrap">
+          <img src="aboutme_photo.jpg" alt="Portrait of Alexandra Ania Fjellvik" class="home-about-image" />
+        </div>
+
+        <div class="home-about-text">
+          <h2>ABOUT ME</h2>
+          <p>
+            Hi! My name is Alexandra Ania Fjellvik, and I work with GIS and remote sensing across
+            environmental and marine topics. My background combines geospatial analysis with social geography,
+            allowing me to connect technical mapping with wider landscape and planning contexts.
+          </p>
+          <a class="button button-secondary" href="about.html">More About Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlight -->
+    <section class="home-highlight-alt">
+      <div class="container">
+        <div class="section-heading">
+          <h2>HIGHLIGHT</h2>
+        </div>
+
+        <div class="highlight-slider">
+          <div class="slide active">
+            <div class="highlight-split">
+              <div class="highlight-copy">
+                <div class="slide-count">1 / 4</div>
+                <h3>Mount St Helens</h3>
+                <h4>Volcanic terrain and lava dome change analysis</h4>
+                <p>
+                  This project used remote sensing, DEMs, and classification workflows to examine terrain loss
+                  related to eruption processes and glacier–lava dome dynamics over time.
+                </p>
+                <a class="button button-secondary" href="portfolio.html#mt-st-helens">More About This Project</a>
+              </div>
+              <div class="highlight-media">
+                <img src="images/mt-st-helens.png" alt="Mount St Helens project image" class="highlight-main-image" />
+              </div>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="highlight-split">
+              <div class="highlight-copy">
+                <div class="slide-count">2 / 4</div>
+                <h3>Blue Connect</h3>
+                <h4>Marine protected area analysis and communication</h4>
+                <p>
+                  Contributed to environmental GIS analysis, stakeholder mapping, and geospatial communication
+                  connected to marine protected area potential and Raet National Park.
+                </p>
+                <a class="button button-secondary" href="portfolio.html#blue-connect">More About Blue Connect</a>
+              </div>
+              <div class="highlight-media">
+                <img src="blue-connect1.png" alt="Blue Connect project image" class="highlight-main-image" />
+              </div>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="highlight-split">
+              <div class="highlight-copy">
+                <div class="slide-count">3 / 4</div>
+                <h3>Kelp Forest Monitoring in Norwegian Fjords</h3>
+                <h4>Google Earth Engine classification workflow</h4>
+                <p>
+                  Developing an SVM-based classification workflow in Google Earth Engine to detect kelp forests
+                  within user-defined polygons in Norwegian fjords.
+                </p>
+                <a class="button button-secondary" href="portfolio.html#kelp">More About This Project</a>
+              </div>
+              <div class="highlight-media">
+                <img src="kelp1.png" alt="Kelp forest monitoring project image" class="highlight-main-image" />
+              </div>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="highlight-split">
+              <div class="highlight-copy">
+                <div class="slide-count">4 / 4</div>
+                <h3>Plastic Debris Detection Using Sentinel Imagery in Svalbard</h3>
+                <h4>Exploratory remote sensing project</h4>
+                <p>
+                  Explored spectral indices and machine learning approaches for detection of floating marine debris
+                  near Moffen Island using Sentinel-2 imagery in Arctic conditions.
+                </p>
+                <a class="button button-secondary" href="portfolio.html#plastic-debris">More About This Project</a>
+              </div>
+              <div class="highlight-media">
+                <img src="plastic1.png" alt="Plastic debris detection project image" class="highlight-main-image" />
+              </div>
+            </div>
+          </div>
+
+          <button class="slide-nav prev-slide" aria-label="Previous slide">&#10094;</button>
+          <button class="slide-nav next-slide" aria-label="Next slide">&#10095;</button>
+
+          <div class="slide-dots">
+            <button class="dot active" aria-label="Go to slide 1"></button>
+            <button class="dot" aria-label="Go to slide 2"></button>
+            <button class="dot" aria-label="Go to slide 3"></button>
+            <button class="dot" aria-label="Go to slide 4"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest work -->
+    <section class="home-latest-alt">
+      <div class="container latest-alt-grid">
+        <div class="latest-grid-wrap">
+          <div class="latest-project-grid">
+            <a class="latest-project-card" href="portfolio.html#mt-st-helens">
+              <img src="images/mt-st-helens.png" alt="Mount St Helens project" />
+              <span>Mount St Helens terrain and lava dome change</span>
+            </a>
+
+            <a class="latest-project-card" href="portfolio.html#hawaii">
+              <img src="hawaii-bathymetry.png" alt="Bathymetric survey design project" />
+              <span>Bathymetric survey design between Oʻahu and Kauaʻi</span>
+            </a>
+
+            <a class="latest-project-card" href="portfolio.html#wrecks">
+              <img src="wrecks-3d.png" alt="Historic shipwreck visualisation project" />
+              <span>3D visualisation of historic shipwrecks</span>
+            </a>
+
+            <a class="latest-project-card" href="portfolio.html#trysil">
+              <img src="trysil-forest.png" alt="Trysil forest research project" />
+              <span>Boreal forest health and soil moisture in Trysil</span>
+            </a>
+
+            <a class="latest-project-card" href="portfolio.html#blue-connect">
+              <img src="blue-connect1.png" alt="Blue Connect project" />
+              <span>Blue Connect</span>
+            </a>
+
+            <a class="latest-project-card" href="portfolio.html#kelp">
+              <img src="kelp1.png" alt="Kelp forest monitoring project" />
+              <span>Kelp Forest Monitoring in Norwegian Fjords</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="latest-side-copy">
+          <h2>LATEST WORK</h2>
+          <p>
+            Explore selected work in remote sensing, GIS, environmental mapping, marine analysis,
+            and geospatial communication.
+          </p>
+          <a class="button button-secondary" href="portfolio.html">More Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-preview">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Please feel free to contact me by email or through LinkedIn.</p>
+        <a class="text-link" href="about.html#contact-block">Contact Me</a>
+      </div>
     </section>
   </main>
 
@@ -126,47 +225,41 @@
     </div>
   </footer>
 
-  <script src="scripts/main.js"></script>
   <script>
-document.querySelectorAll("[data-images]").forEach((gallery) => {
-  const images = JSON.parse(gallery.dataset.images);
-  const imageEl = gallery.querySelector("img");
-  const prevBtn = gallery.querySelector(".prev");
-  const nextBtn = gallery.querySelector(".next");
-  const counter = gallery.querySelector(".gallery-counter");
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
+    const prevBtn = document.querySelector(".prev-slide");
+    const nextBtn = document.querySelector(".next-slide");
+    let currentSlide = 0;
 
-  let index = 0;
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+      });
 
-  function updateGallery() {
-    imageEl.src = images[index];
-    if (counter) {
-      counter.textContent = `${index + 1} / ${images.length}`;
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
     }
-  }
 
-  if (images.length <= 1) {
-    if (prevBtn) prevBtn.style.display = "none";
-    if (nextBtn) nextBtn.style.display = "none";
-  }
+    function goToSlide(index) {
+      currentSlide = (index + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
 
-  if (prevBtn) {
-    prevBtn.addEventListener("click", (event) => {
-      event.preventDefault();
-      index = (index - 1 + images.length) % images.length;
-      updateGallery();
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => goToSlide(currentSlide - 1));
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => goToSlide(currentSlide + 1));
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => goToSlide(index));
     });
-  }
 
-  if (nextBtn) {
-    nextBtn.addEventListener("click", (event) => {
-      event.preventDefault();
-      index = (index + 1) % images.length;
-      updateGallery();
-    });
-  }
-
-  updateGallery();
-});
-</script>
+    showSlide(currentSlide);
+  </script>
 </body>
 </html>
