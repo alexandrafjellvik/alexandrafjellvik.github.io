@@ -326,52 +326,66 @@
   <!-- =========================
        FILTER + GALLERY SCRIPTS
        ========================= -->
-  <script>
-    /* Show all project cards on first load */
-    filterSelection("all");
+ <!-- =========================
+     FILTER + GALLERY SCRIPTS
+     ========================= -->
+<!-- =========================
+     FILTER + GALLERY SCRIPTS
+     ========================= -->
+<script>
+  /* Show all project cards on first load */
+  filterSelection("all");
 
-    /* Filter project cards by category */
-    function filterSelection(category) {
-      const items = document.getElementsByClassName("portcolumn");
+  /* Filter project cards by category */
+  function filterSelection(category) {
+    const items = document.getElementsByClassName("portcolumn");
 
-      for (let i = 0; i < items.length; i++) {
-        items[i].classList.remove("show");
-        if (category === "all" || items[i].className.indexOf(category) > -1) {
-          items[i].classList.add("show");
-        }
+    for (let i = 0; i < items.length; i++) {
+      items[i].classList.remove("show");
+      if (category === "all" || items[i].className.indexOf(category) > -1) {
+        items[i].classList.add("show");
       }
     }
+  }
 
-    /* Active button styling */
-    const btnContainer = document.getElementById("myBtnContainer");
-    const btns = btnContainer.getElementsByClassName("portbtn");
+  /* Active button styling */
+  const btnContainer = document.getElementById("myBtnContainer");
+  const btns = btnContainer.getElementsByClassName("portbtn");
 
-    for (let i = 0; i < btns.length; i++) {
-      btns[i].addEventListener("click", function () {
-        const current = document.getElementsByClassName("portactive");
-        if (current.length > 0) {
-          current[0].className = current[0].className.replace(" portactive", "");
-        }
-        this.className += " portactive";
-      });
-    }
+  for (let i = 0; i < btns.length; i++) {
+    btns[i].addEventListener("click", function () {
+      const current = document.getElementsByClassName("portactive");
+      if (current.length > 0) {
+        current[0].className = current[0].className.replace(" portactive", "");
+      }
+      this.className += " portactive";
+    });
+  }
 
-    /* Image sliders inside each portfolio card */
-    const galleries = document.querySelectorAll(".project-gallery");
+  /* Image sliders inside each portfolio card */
+  const galleries = document.querySelectorAll(".project-gallery");
 
-    galleries.forEach((gallery) => {
-      const images = JSON.parse(gallery.dataset.images);
-      const imgEl = gallery.querySelector("img");
-      const prevBtn = gallery.querySelector(".gallery-arrow.prev");
-      const nextBtn = gallery.querySelector(".gallery-arrow.next");
-      const counter = gallery.querySelector(".gallery-counter");
-      let currentIndex = 0;
+  galleries.forEach((gallery) => {
+    const images = JSON.parse(gallery.dataset.images);
+    const imgEl = gallery.querySelector("img");
+    const prevBtn = gallery.querySelector(".gallery-arrow.prev");
+    const nextBtn = gallery.querySelector(".gallery-arrow.next");
+    const counter = gallery.querySelector(".gallery-counter");
+    let currentIndex = 0;
 
-      function updateGallery() {
-        imgEl.src = images[currentIndex];
+    function updateGallery() {
+      imgEl.src = images[currentIndex];
+      if (counter) {
         counter.textContent = `${currentIndex + 1} / ${images.length}`;
       }
+    }
 
+    /* Hide arrows and counter if there is only one image */
+    if (images.length <= 1) {
+      if (prevBtn) prevBtn.style.display = "none";
+      if (nextBtn) nextBtn.style.display = "none";
+      if (counter) counter.style.display = "none";
+    } else {
       if (prevBtn) {
         prevBtn.addEventListener("click", () => {
           currentIndex = (currentIndex - 1 + images.length) % images.length;
@@ -385,9 +399,10 @@
           updateGallery();
         });
       }
+    }
 
-      updateGallery();
-    });
-  </script>
+    updateGallery();
+  });
+</script>
 </body>
 </html>
