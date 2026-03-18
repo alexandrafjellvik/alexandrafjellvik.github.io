@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic page setup -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Browser tab title -->
   <title>Alexandra Ania Fjellvik | Portfolio</title>
+
+  <!-- Connects this page to your CSS file -->
   <link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
+  <!-- =========================
+       HEADER / TOP NAVIGATION
+       Shows your name and the menu at the top of the page
+       ========================= -->
   <header class="site-header">
     <div class="container nav-wrap">
+      <!-- Your name in the header -->
       <div class="site-name">Alexandra Ania Fjellvik</div>
+
+      <!-- Main navigation menu -->
       <nav class="site-nav">
         <a href="index.html">HOME</a>
         <a href="about.html">ABOUT ME</a>
@@ -20,14 +32,26 @@
   </header>
 
   <main>
+    <!-- =========================
+         PAGE TITLE SECTION
+         This gives the page its main heading
+         ========================= -->
     <section class="about-title-section">
       <div class="container">
         <h1>PORTFOLIO</h1>
       </div>
     </section>
 
+    <!-- =========================
+         PORTFOLIO FILTER SECTION
+         This includes:
+         1. the category buttons
+         2. the grid of project cards
+         ========================= -->
     <section class="portfolio-filter-section">
       <div class="container">
+
+        <!-- Filter buttons at the top of the portfolio page -->
         <div class="portfolio-controls" id="myBtnContainer">
           <button class="portbtn portactive" onclick="filterSelection('all')">Show all</button>
           <button class="portbtn" onclick="filterSelection('remote-sensing')">Remote Sensing</button>
@@ -37,112 +61,127 @@
           <button class="portbtn" onclick="filterSelection('web-mapping')">Web Mapping</button>
         </div>
 
+        <!-- Main grid row that holds all project cards -->
         <div class="portrow">
 
+          <!-- =========================
+               PROJECT CARD 1
+               Classes after "portcolumn" control which filters it belongs to
+               ========================= -->
           <div class="portcolumn gis remote-sensing environmental">
             <div class="portcontent">
               <a href="portfolio.html#mt-st-helens" class="port_txt">
-                <img src="mt-st-helens.png" alt="Mount St Helens terrain and lava dome change" />
+                <img src="images/mt-st-helens.png" alt="Mount St Helens terrain and lava dome change" />
                 <h3>Mount St Helens terrain and lava dome change</h3>
                 <h4>Volcanic change detection</h4>
               </a>
             </div>
           </div>
 
+          <!-- PROJECT CARD 2 -->
           <div class="portcolumn gis marine environmental">
             <div class="portcontent">
               <a href="portfolio.html#hawaii" class="port_txt">
-                <img src="hawaii-bathymetry.png" alt="Bathymetric survey design between Oʻahu and Kauaʻi" />
+                <img src="images/hawaii-bathymetry.png" alt="Bathymetric survey design between Oʻahu and Kauaʻi" />
                 <h3>Bathymetric survey design between Oʻahu and Kauaʻi</h3>
                 <h4>Marine survey planning</h4>
               </a>
             </div>
           </div>
 
+          <!-- PROJECT CARD 3 -->
           <div class="portcolumn gis marine">
             <div class="portcontent">
               <a href="portfolio.html#wrecks" class="port_txt">
-                <img src="wrecks-3d.png" alt="3D visualisation of historic shipwrecks" />
+                <img src="images/wrecks-3d.png" alt="3D visualisation of historic shipwrecks" />
                 <h3>3D visualisation of historic shipwrecks</h3>
                 <h4>Marine archaeology</h4>
               </a>
             </div>
           </div>
 
+          <!-- PROJECT CARD 4 -->
           <div class="portcolumn gis remote-sensing environmental">
             <div class="portcontent">
               <a href="portfolio.html#iceland" class="port_txt">
-                <img src="iceland-glacier.png" alt="Mýrdalsjökull glacier retreat and meltwater change" />
+                <img src="images/iceland-glacier.png" alt="Mýrdalsjökull glacier retreat and meltwater change" />
                 <h3>Mýrdalsjökull glacier retreat and meltwater change</h3>
                 <h4>Cryosphere monitoring</h4>
               </a>
             </div>
           </div>
 
+          <!-- PROJECT CARD 5 -->
           <div class="portcolumn gis remote-sensing environmental">
             <div class="portcontent">
               <a href="portfolio.html#trysil" class="port_txt">
-                <img src="trysil-forest.png" alt="Boreal forest health, fungi networks, and soil moisture in Trysil" />
+                <img src="images/trysil-forest.png" alt="Boreal forest health, fungi networks, and soil moisture in Trysil" />
                 <h3>Boreal forest health, fungi networks, and soil moisture in Trysil</h3>
                 <h4>Master’s research</h4>
               </a>
             </div>
           </div>
 
+          <!-- PROJECT CARD 6 -->
           <div class="portcolumn gis remote-sensing environmental">
             <div class="portcontent">
               <a href="portfolio.html#engskogen" class="port_txt">
-                <img src="engskogen-fire.png" alt="Vegetation regeneration after wildfire in Engskogen, Sweden" />
+                <img src="images/engskogen-fire.png" alt="Vegetation regeneration after wildfire in Engskogen, Sweden" />
                 <h3>Vegetation regeneration after wildfire in Engskogen, Sweden</h3>
                 <h4>Wildfire recovery</h4>
               </a>
             </div>
           </div>
 
+          <!-- PROJECT CARD 7 -->
           <div class="portcolumn gis remote-sensing marine environmental">
             <div class="portcontent">
               <a href="portfolio.html#kelp" class="port_txt">
-                <img src="kelp1.png" alt="Google Earth Engine kelp forest monitoring in Norwegian fjords" />
+                <img src="images/kelp1.png" alt="Google Earth Engine kelp forest monitoring in Norwegian fjords" />
                 <h3>Google Earth Engine – Kelp Forest Monitoring in Norwegian Fjords</h3>
                 <h4>Ongoing remote sensing project</h4>
               </a>
             </div>
           </div>
 
+          <!-- PROJECT CARD 8 -->
           <div class="portcolumn gis marine environmental web-mapping">
             <div class="portcontent">
               <a href="portfolio.html#blue-connect" class="port_txt">
-                <img src="blue-connect1.png" alt="Blue Connect" />
+                <img src="images/blue-connect1.png" alt="Blue Connect" />
                 <h3>Blue Connect</h3>
                 <h4>Marine protected area analysis and StoryMap communication</h4>
               </a>
             </div>
           </div>
 
+          <!-- PROJECT CARD 9 -->
           <div class="portcolumn gis marine environmental web-mapping">
             <div class="portcontent">
               <a href="portfolio.html#seasketch" class="port_txt">
-                <img src="seasketch1.png" alt="SeaSketch Marine Area Mapping" />
+                <img src="images/seasketch1.png" alt="SeaSketch Marine Area Mapping" />
                 <h3>SeaSketch Marine Area Mapping</h3>
                 <h4>Marine conservation planning</h4>
               </a>
             </div>
           </div>
 
+          <!-- PROJECT CARD 10 -->
           <div class="portcolumn gis marine environmental">
             <div class="portcontent">
               <a href="portfolio.html#small-boat-harbours" class="port_txt">
-                <img src="harbours1.png" alt="Small Boat Harbour Mapping" />
+                <img src="images/harbours1.png" alt="Small Boat Harbour Mapping" />
                 <h3>Small Boat Harbour Mapping</h3>
                 <h4>Environmental regulation support</h4>
               </a>
             </div>
           </div>
 
+          <!-- PROJECT CARD 11 -->
           <div class="portcolumn gis remote-sensing marine environmental">
             <div class="portcontent">
               <a href="portfolio.html#plastic-debris" class="port_txt">
-                <img src="plastic1.png" alt="Plastic Debris Detection Using Sentinel Imagery in Svalbard" />
+                <img src="images/plastic1.png" alt="Plastic Debris Detection Using Sentinel Imagery in Svalbard" />
                 <h3>Plastic Debris Detection Using Sentinel Imagery in Svalbard</h3>
                 <h4>Exploratory remote sensing project</h4>
               </a>
@@ -153,6 +192,10 @@
       </div>
     </section>
 
+    <!-- =========================
+         CONTACT SECTION
+         Simple contact block at the bottom of the page
+         ========================= -->
     <section class="contact-preview" id="contact-block">
       <div class="container">
         <h2>Contact</h2>
@@ -162,35 +205,57 @@
     </section>
   </main>
 
+  <!-- =========================
+       FOOTER
+       Bottom strip of the page
+       ========================= -->
   <footer class="site-footer">
     <div class="container">
       © Copyright 2026, Alexandra Ania Fjellvik
     </div>
   </footer>
 
+  <!-- =========================
+       PORTFOLIO FILTER SCRIPT
+       This makes the category buttons show/hide project cards
+       ========================= -->
   <script>
+    /* Shows all portfolio items when the page first loads */
     filterSelection("all");
 
+    /* This function filters project cards by category */
     function filterSelection(category) {
       const items = document.getElementsByClassName("portcolumn");
 
       for (let i = 0; i < items.length; i++) {
+        /* Hide each item first */
         items[i].classList.remove("show");
+
+        /* Show it again if it matches the selected category,
+           or if "all" was selected */
         if (category === "all" || items[i].className.indexOf(category) > -1) {
           items[i].classList.add("show");
         }
       }
     }
 
+    /* Finds the filter button container */
     const btnContainer = document.getElementById("myBtnContainer");
+
+    /* Finds all filter buttons */
     const btns = btnContainer.getElementsByClassName("portbtn");
 
+    /* Makes the clicked button visually active */
     for (let i = 0; i < btns.length; i++) {
       btns[i].addEventListener("click", function () {
         const current = document.getElementsByClassName("portactive");
+
+        /* Remove active styling from the current button */
         if (current.length > 0) {
           current[0].className = current[0].className.replace(" portactive", "");
         }
+
+        /* Add active styling to the clicked button */
         this.className += " portactive";
       });
     }
