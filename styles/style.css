@@ -1091,3 +1091,19 @@ h2 {
     width: 100%;
   }
 }
+/* Wrecks card only */
+.project-wrecks .project-gallery {
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-wrecks .project-gallery img {
+  width: auto;
+  max-width: 100%;
+  max-height: 180px;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center;
+}
