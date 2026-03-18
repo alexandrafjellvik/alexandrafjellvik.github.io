@@ -15,6 +15,11 @@
   --max-width: 1120px;
 }
 
+/* =========================
+   GLOBAL RESET / BASE
+   Basic page-wide setup
+   ========================= */
+
 * {
   box-sizing: border-box;
 }
@@ -50,7 +55,10 @@ img {
   margin: 0 auto;
 }
 
-/* Header / Nav */
+/* =========================
+   HEADER / NAVIGATION
+   Top menu and site title
+   ========================= */
 
 .site-header {
   background: rgba(255, 255, 255, 0.94);
@@ -64,21 +72,25 @@ img {
 
 .nav-wrap {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   padding: 1rem 0;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 .site-name {
   font-weight: 700;
   color: var(--accent-deep);
+  text-align: center;
 }
 
 .site-nav {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .site-nav a {
@@ -92,7 +104,10 @@ img {
   color: var(--accent);
 }
 
-/* Typography */
+/* =========================
+   TYPOGRAPHY
+   Headings, intro text, muted text
+   ========================= */
 
 .eyebrow {
   color: var(--accent);
@@ -127,7 +142,10 @@ h2 {
   color: var(--muted);
 }
 
-/* Buttons */
+/* =========================
+   BUTTONS
+   Shared button styling
+   ========================= */
 
 .button-row {
   display: flex;
@@ -164,7 +182,10 @@ h2 {
   border: 1px solid var(--line);
 }
 
-/* Generic cards */
+/* =========================
+   GENERIC CARDS / PANELS
+   Shared box styling used across the site
+   ========================= */
 
 .hero-panel,
 .home-card,
@@ -196,9 +217,13 @@ h2 {
   color: var(--muted);
   font-size: 0.95rem;
   border-top: 1px solid var(--line);
+  text-align: center;
 }
 
-/* Old homepage layout compatibility */
+/* =========================
+   OLD HOMEPAGE LAYOUT COMPATIBILITY
+   Legacy styles that still support older sections
+   ========================= */
 
 .hero {
   padding: 4rem 0 2rem;
@@ -351,7 +376,10 @@ h2 {
   text-align: center;
 }
 
-/* Page structure */
+/* =========================
+   PAGE STRUCTURE
+   Shared layout helpers
+   ========================= */
 
 .page-main {
   padding: 2.5rem 0 3rem;
@@ -385,7 +413,10 @@ h2 {
   overflow: hidden;
 }
 
-/* Career / Resume timeline page */
+/* =========================
+   CAREER / RESUME TIMELINE PAGE
+   Styles for the CV / career page layout
+   ========================= */
 
 .career-title {
   padding: 3rem 0 1rem;
@@ -508,10 +539,17 @@ h2 {
   text-align: center;
 }
 
-/* About page */
+/* =========================
+   ABOUT PAGE
+   Main About page layout and cards
+   ========================= */
 
 .about-title-section {
   padding: 3rem 0 1.5rem;
+}
+
+.about-title-section .container {
+  text-align: center;
 }
 
 .about-main-section {
@@ -593,7 +631,10 @@ h2 {
   color: var(--accent-deep);
 }
 
-/* Portfolio filter page */
+/* =========================
+   PORTFOLIO FILTER PAGE
+   Portfolio heading, filter buttons, grid cards
+   ========================= */
 
 .portfolio-filter-section {
   background: linear-gradient(180deg, #f3f3f0 0%, #ecece8 100%);
@@ -601,10 +642,12 @@ h2 {
 }
 
 .portfolio-controls {
-  margin-bottom: 1.8rem;
+  margin: 0 auto 1.8rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  justify-content: center;
+  text-align: center;
 }
 
 .portbtn {
@@ -653,7 +696,10 @@ h2 {
 .portcontent img {
   width: 100%;
   height: 240px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 0.6rem;
   filter: saturate(0.94) contrast(1.01);
 }
 
@@ -671,6 +717,7 @@ h2 {
   margin: 1rem 1rem 0.35rem;
   font-size: 1.1rem;
   color: var(--text);
+  text-align: center;
 }
 
 .portcontent h4 {
@@ -678,9 +725,13 @@ h2 {
   font-size: 0.95rem;
   color: var(--accent);
   font-weight: 600;
+  text-align: center;
 }
 
-/* Alternate homepage */
+/* =========================
+   ALTERNATE HOMEPAGE
+   Homepage hero, about preview, highlights, latest work
+   ========================= */
 
 .home-hero-alt {
   background: linear-gradient(180deg, #f3f3f0 0%, #ecece8 100%);
@@ -885,7 +936,10 @@ h2 {
   margin-bottom: 1.2rem;
 }
 
-/* Responsive */
+/* =========================
+   RESPONSIVE STYLES
+   Tablet and mobile adjustments
+   ========================= */
 
 @media (max-width: 980px) {
   .home-hero-grid,
@@ -920,7 +974,11 @@ h2 {
 
   .nav-wrap {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+  }
+
+  .site-nav {
+    justify-content: center;
   }
 
   .highlight-gallery,
