@@ -1,20 +1,17 @@
 :root {
-  --bg: #f5f5f2;
-  --surface: rgba(255, 255, 255, 0.82);
-  --surface-solid: #ffffff;
-  --surface-soft: #ecece8;
-  --text: #101215;
-  --muted: #5d6268;
-  --line: rgba(10, 17, 27, 0.08);
-  --accent: #223041;
-  --accent-dark: #161f2b;
-  --accent-deep: #0a111b;
-  --accent-soft: #e6ebf1;
-  --shadow: 0 18px 38px rgba(0, 0, 0, 0.08);
+  --bg: #161815;
+  --surface: #1f221e;
+  --surface-soft: #2a2e28;
+  --text: #f1eee7;
+  --muted: #b1ab9d;
+  --line: #3a4038;
+  --accent: #7f8f6a;
+  --accent-dark: #657255;
+  --accent-deep: #4a5340;
+  --accent-soft: #2f352d;
+  --shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
   --radius: 18px;
-  --max-width: 1120px;
 }
-
 /* =========================
    GLOBAL RESET / BASE
    Basic page-wide setup
