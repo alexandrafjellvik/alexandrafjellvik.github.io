@@ -1095,3 +1095,81 @@ h2 {
   object-fit: contain;
   object-position: center;
 }
+/* =========================
+   HOMEPAGE HERO BANNER
+   Full-width remote sensing image with text overlay
+   ========================= */
+
+.hero-banner {
+  min-height: 78vh;
+  background-image:
+    linear-gradient(rgba(20, 28, 36, 0.48), rgba(20, 28, 36, 0.48)),
+    url("../images/hero_remote_sensing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.hero-banner-overlay {
+  width: 100%;
+  padding: 5rem 0;
+}
+
+.hero-banner-content {
+  max-width: 760px;
+  color: #ffffff;
+  text-align: left;
+}
+
+.hero-banner-eyebrow {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.hero-banner-title {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.hero-banner-text {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 680px;
+}
+
+.hero-banner .button {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.hero-banner .button:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.hero-banner .button-primary {
+  background: rgba(255, 255, 255, 0.92);
+  color: #223041;
+  border-color: rgba(255, 255, 255, 0.92);
+}
+
+.hero-banner .button-primary:hover {
+  background: #ffffff;
+}
+
+@media (max-width: 860px) {
+  .hero-banner {
+    min-height: 68vh;
+    background-position: center center;
+  }
+
+  .hero-banner-content {
+    text-align: left;
+  }
+
+  .hero-banner-text {
+    font-size: 1rem;
+  }
+}
