@@ -1,6 +1,918 @@
+:root {
+  --bg: #344354;
+  --surface: rgba(244, 246, 249, 0.92);
+  --surface-solid: #f4f6f9;
+  --surface-soft: #e8eef4;
+  --text: #344354;
+  --muted: #6b8199;
+  --line: rgba(52, 67, 84, 0.14);
+  --accent: #b8608c;
+  --accent-dark: #9e1b70;
+  --accent-deep: #344354;
+  --accent-soft: #e8dae1;
+  --shadow: 0 14px 34px rgba(0, 0, 0, 0.16);
+  --radius: 18px;
+  --max-width: 1120px;
+}
+
 /* =========================
-   HOMEPAGE HIGHLIGHTS
+   GLOBAL RESET / BASE
    ========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(calc(100% - 2rem), var(--max-width));
+  margin: 0 auto;
+}
+
+/* =========================
+   HEADER / NAVIGATION
+   ========================= */
+
+.site-header {
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.nav-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.site-name {
+  font-weight: 700;
+  color: var(--accent-deep);
+  text-align: center;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.site-nav a {
+  font-size: 0.92rem;
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.site-nav a.active {
+  color: var(--accent);
+}
+
+/* =========================
+   TYPOGRAPHY
+   ========================= */
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0.4rem 0 1rem;
+  font-size: clamp(2.2rem, 5vw, 3.7rem);
+  line-height: 1.05;
+  color: var(--accent-deep);
+}
+
+h2,
+h3 {
+  color: var(--accent-deep);
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.lead,
+.page-hero p,
+.about-text-wrap p,
+.resume-intro-centered,
+.resume-intro,
+.latest-side-copy p {
+  color: var(--muted);
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.button-row {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.8rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.84);
+  color: var(--text);
+  font-weight: 700;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.button:hover {
+  text-decoration: none;
+}
+
+.button-primary {
+  background: var(--accent-deep);
+  color: white;
+  border-color: var(--accent-deep);
+}
+
+.button-secondary {
+  background: rgba(255, 255, 255, 0.84);
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+/* =========================
+   GENERIC CARDS / PANELS
+   ========================= */
+
+.hero-panel,
+.home-card,
+.page-card,
+.highlight-card,
+.portfolio-project,
+.about-detail-block,
+.featured-card,
+.portcontent,
+.career-content,
+.career-details-box,
+.timeline-content-box,
+.latest-project-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.text-link {
+  font-weight: 700;
+  color: var(--accent-deep);
+}
+
+.site-footer {
+  padding: 2rem 0 3rem;
+  color: var(--surface-solid);
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+}
+
+/* =========================
+   LEGACY / SHARED LAYOUT
+   ========================= */
+
+.hero {
+  padding: 4rem 0 2rem;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-panel {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(22, 31, 43, 0.96), rgba(34, 48, 65, 0.94));
+  color: white;
+}
+
+.hero-panel h2,
+.hero-panel li {
+  color: white;
+}
+
+.hero-panel ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.split-home,
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin: 2rem auto;
+}
+
+.home-feature-image,
+.page-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius);
+  filter: saturate(0.94) contrast(1.01);
+}
+
+.home-copy {
+  padding: 1.5rem;
+}
+
+.section-heading {
+  margin-bottom: 1rem;
+}
+
+.highlight-card {
+  overflow: hidden;
+}
+
+.highlight-text,
+.project-text {
+  padding: 1.4rem;
+}
+
+.highlight-text h3,
+.project-text h2 {
+  margin-bottom: 0.35rem;
+}
+
+.highlight-text h4,
+.project-text h3 {
+  margin-top: 0;
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+/* Larger gallery style used outside the compact portfolio cards */
+.highlight-gallery,
+.project-gallery-large {
+  position: relative;
+  background: rgba(17, 17, 17, 0.04);
+  padding: 1rem;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.highlight-gallery img,
+.project-gallery-large img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: contain;
+}
+
+/* Subtle gallery controls */
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.9rem;
+  height: 1.9rem;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--accent-deep);
+  cursor: pointer;
+  font-size: 0.95rem;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.gallery-arrow.prev {
+  left: 0.6rem;
+}
+
+.gallery-arrow.next {
+  right: 0.6rem;
+}
+
+.project-gallery:hover .gallery-arrow,
+.highlight-gallery:hover .gallery-arrow,
+.project-gallery-large:hover .gallery-arrow {
+  opacity: 1;
+}
+
+.gallery-arrow:hover {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.gallery-counter {
+  position: absolute;
+  right: 0.7rem;
+  bottom: 0.7rem;
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--accent-deep);
+  padding: 0.18rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.project-gallery:hover .gallery-counter,
+.highlight-gallery:hover .gallery-counter,
+.project-gallery-large:hover .gallery-counter {
+  opacity: 1;
+}
+
+.latest-work,
+.contact-preview,
+.research-preview {
+  margin: 3rem auto;
+}
+
+.latest-grid {
+  display: grid;
+  gap: 0.8rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.latest-item {
+  padding: 1rem 1.1rem;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.latest-item:hover {
+  text-decoration: none;
+  border-color: rgba(34, 48, 65, 0.22);
+}
+
+.center-link {
+  text-align: center;
+}
+
+/* =========================
+   PAGE STRUCTURE
+   ========================= */
+
+.page-main {
+  padding: 2.5rem 0 3rem;
+}
+
+.page-hero {
+  margin-bottom: 1.5rem;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.tag-list span {
+  padding: 0.5rem 0.8rem;
+  background: var(--accent-soft);
+  border-radius: 999px;
+  color: var(--accent-deep);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.portfolio-list {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.portfolio-project {
+  overflow: hidden;
+}
+
+/* =========================
+   CAREER / RESUME TIMELINE
+   ========================= */
+
+.career-title {
+  padding: 3rem 0 1rem;
+}
+
+.career-title h1 {
+  margin: 0;
+}
+
+.career-timeline-wrap {
+  padding: 1rem 0 3rem;
+}
+
+.career-section-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.career-timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.career-timeline::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background: rgba(10, 17, 27, 0.12);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+}
+
+.career-entry {
+  position: relative;
+  width: 50%;
+  padding: 0 2rem 2rem 2rem;
+}
+
+.career-entry::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  right: -9px;
+  background: var(--accent-deep);
+  border: 4px solid var(--surface-solid);
+  top: 1.4rem;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: 0 0 0 1px rgba(10, 17, 27, 0.12);
+}
+
+.career-entry.left {
+  left: 0;
+}
+
+.career-entry.right {
+  left: 50%;
+}
+
+.career-entry.right::after {
+  left: -9px;
+}
+
+.career-content {
+  padding: 1.4rem;
+}
+
+.career-content h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.career-content h4 {
+  margin: 0 0 0.55rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.career-content h3 {
+  margin: 0 0 0.7rem;
+  font-size: 1.15rem;
+}
+
+.career-content p {
+  margin: 0;
+}
+
+.career-details {
+  padding: 2rem 0 2rem;
+}
+
+.career-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.career-details-box {
+  padding: 1.5rem;
+}
+
+.career-details-box h2 {
+  margin-bottom: 1rem;
+}
+
+.career-details-box h3 {
+  margin-bottom: 0.35rem;
+  color: var(--accent);
+}
+
+.career-contact {
+  padding: 1rem 0 3rem;
+  text-align: center;
+}
+
+/* =========================
+   ABOUT PAGE
+   ========================= */
+
+.about-title-section {
+  padding: 3rem 0 1.5rem;
+}
+
+.about-title-section .container {
+  text-align: center;
+}
+
+.about-main-section {
+  background: linear-gradient(180deg, #f3f3f0 0%, #ecece8 100%);
+  padding: 2rem 0 3rem;
+}
+
+.about-two-column {
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.about-image-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.about-photo {
+  width: 100%;
+  max-width: 360px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  filter: saturate(0.94) contrast(1.01);
+}
+
+.about-text-wrap p {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+}
+
+.about-details-section {
+  padding: 3rem 0;
+  background: transparent;
+}
+
+.about-details-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.about-detail-block {
+  padding: 1.5rem;
+}
+
+.about-detail-block h2 {
+  margin-bottom: 0.9rem;
+  color: var(--accent-deep);
+}
+
+.about-detail-block p {
+  margin: 0 0 0.9rem;
+}
+
+.about-detail-block p:last-child {
+  margin-bottom: 0;
+}
+
+.about-featured-section {
+  background: linear-gradient(180deg, #f3f3f0 0%, #ecece8 100%);
+  padding: 3rem 0;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.featured-card {
+  padding: 1.4rem;
+}
+
+.featured-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  color: var(--accent-deep);
+}
+
+/* =========================
+   PORTFOLIO FILTER PAGE
+   ========================= */
+
+.portfolio-filter-section {
+  background: linear-gradient(180deg, #f3f3f0 0%, #ecece8 100%);
+  padding: 2rem 0 3rem;
+}
+
+.portfolio-controls {
+  margin: 0 auto 1.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  text-align: center;
+}
+
+.portbtn {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.84);
+  color: var(--text);
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.portbtn:hover {
+  background: rgba(34, 48, 65, 0.08);
+}
+
+.portbtn.portactive {
+  background: var(--accent-deep);
+  color: white;
+  border-color: var(--accent-deep);
+}
+
+.portrow {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -0.75rem;
+}
+
+.portcolumn {
+  display: none;
+  width: 33.333%;
+  padding: 0 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.portcolumn.show {
+  display: block;
+}
+
+.portcontent {
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.portcontent .project-gallery {
+  position: relative;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 0.6rem;
+  min-height: 0;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--line);
+}
+
+.portcontent .project-gallery img {
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: contain;
+  object-position: center;
+  margin: 0 auto;
+  filter: saturate(0.94) contrast(1.01);
+}
+
+.port_txt {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.port_txt:hover {
+  text-decoration: none;
+}
+
+.portcontent .project-text {
+  padding: 1rem;
+}
+
+.portcontent .project-text h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+  color: var(--text);
+  text-align: center;
+}
+
+.portcontent .project-text h4 {
+  margin: 0 0 0.8rem;
+  font-size: 0.95rem;
+  color: var(--accent);
+  font-weight: 600;
+  text-align: center;
+}
+
+.portcontent .project-text p {
+  margin: 0 0 0.8rem;
+}
+
+.portcontent .project-text p:last-child {
+  margin-bottom: 0;
+}
+
+.portcontent .project-text ul {
+  margin: 0 0 0.8rem 1.1rem;
+  padding: 0;
+}
+
+.portcontent .project-text li {
+  margin-bottom: 0.35rem;
+}
+
+/* =========================
+   HOMEPAGE HERO BANNER
+   ========================= */
+
+.hero-banner-section {
+  position: relative;
+}
+
+.hero-banner-image-wrap {
+  position: relative;
+  width: 100%;
+  min-height: 78vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hero-banner-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.hero-banner-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(rgba(20, 28, 36, 0.42), rgba(20, 28, 36, 0.42));
+}
+
+.hero-banner-content {
+  max-width: 760px;
+  color: #ffffff;
+  text-align: left;
+  padding: 5rem 0;
+}
+
+.hero-banner-eyebrow {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.hero-banner-title {
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.hero-banner-text {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 680px;
+}
+
+.hero-banner-overlay .button {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.hero-banner-overlay .button:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.hero-banner-overlay .button-primary {
+  background: rgba(255, 255, 255, 0.92);
+  color: #223041;
+  border-color: rgba(255, 255, 255, 0.92);
+}
+
+.hero-banner-overlay .button-primary:hover {
+  background: #ffffff;
+}
+
+/* =========================
+   HOMEPAGE ABOUT PREVIEW
+   ========================= */
+
+.home-about-alt {
+  background: transparent;
+  padding: 3rem 0;
+}
+
+.home-about-split {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.home-about-text-wrap {
+  padding-right: 2rem;
+  border-right: 2px solid rgba(255, 255, 255, 0.18);
+}
+
+.home-about-text-wrap h2 {
+  color: var(--surface-solid);
+  margin-bottom: 1rem;
+}
+
+.home-about-text-wrap p {
+  color: rgba(244, 246, 249, 0.9);
+  margin-bottom: 1rem;
+}
+
+.home-about-photo-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-about-photo {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  border-radius: var(--radius);
+  object-fit: cover;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.home-about-text h2,
+.latest-side-copy h2 {
+  color: var(--accent-deep);
+}
+
 /* =========================
    HOMEPAGE HIGHLIGHTS
    ========================= */
@@ -108,4 +1020,156 @@
 
 .slide-dots .dot.active {
   background: var(--accent-deep);
+}
+
+/* =========================
+   RESEARCH PREVIEW
+   ========================= */
+
+.research-preview {
+  text-align: center;
+  padding: 2rem 0 1rem;
+  color: var(--surface-solid);
+}
+
+.research-preview h2,
+.research-preview p {
+  color: var(--surface-solid);
+}
+
+.research-preview .button {
+  margin-top: 1rem;
+}
+
+/* =========================
+   RESPONSIVE STYLES
+   ========================= */
+
+@media (max-width: 980px) {
+  .highlight-split {
+    grid-template-columns: 1fr;
+  }
+
+  .latest-project-grid,
+  .portcolumn {
+    width: 50%;
+  }
+
+  .prev-slide {
+    left: 0.5rem;
+  }
+
+  .next-slide {
+    right: 0.5rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .hero,
+  .split-home,
+  .two-column,
+  .about-two-column,
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .site-nav {
+    justify-content: center;
+  }
+
+  .highlight-gallery,
+  .project-gallery-large {
+    min-height: 250px;
+  }
+
+  .highlight-gallery img,
+  .project-gallery-large img {
+    max-height: 320px;
+  }
+
+  .career-timeline::after {
+    left: 16px;
+  }
+
+  .career-entry {
+    width: 100%;
+    padding-left: 3rem;
+    padding-right: 0;
+  }
+
+  .career-entry.left,
+  .career-entry.right {
+    left: 0;
+  }
+
+  .career-entry::after,
+  .career-entry.right::after {
+    left: 7px;
+    right: auto;
+  }
+
+  .career-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-title-section {
+    padding: 2rem 0 1rem;
+  }
+
+  .hero-banner-image-wrap,
+  .hero-banner-overlay {
+    min-height: 68vh;
+  }
+
+  .hero-banner-content {
+    padding: 4rem 0;
+  }
+
+  .hero-banner-text {
+    font-size: 1rem;
+  }
+
+  .home-about-split {
+    grid-template-columns: 1fr;
+  }
+
+  .home-about-text-wrap {
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.18);
+    padding-bottom: 2rem;
+  }
+
+  .highlight-main-image {
+    height: 320px;
+  }
+}
+
+@media (max-width: 680px) {
+  .latest-project-grid,
+  .portcolumn {
+    width: 100%;
+  }
+}
+
+/* Wrecks card only */
+.project-wrecks .project-gallery {
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-wrecks .project-gallery img {
+  width: auto;
+  max-width: 100%;
+  max-height: 180px;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center;
 }
