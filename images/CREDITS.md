@@ -23,3 +23,9 @@
 
 - File: `me_home.jpg`
 - Existing photograph supplied in Alexandra's portfolio repository; reused unchanged at her request.
+
+## Drone applications portrait
+
+- File: `alexandra-drone-field.jpg`
+- Photograph supplied by Alexandra for this update; copied unchanged from `drone image wp.jpe`.
+- The portfolio page displays Alexandra with a controller and a drone. The photograph does not imply a completed mapping project or certification.
