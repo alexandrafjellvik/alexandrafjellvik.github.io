@@ -40,7 +40,7 @@
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
 
-/* Portfolio drone portrait */
+/* Portfolio aerial river photograph */
 .drone-feature{grid-column:1/-1;display:grid;grid-template-columns:1.18fr .82fr;margin:28px 0 0;background:var(--prussian);color:var(--paper)}
 .drone-feature img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;object-position:center}
 .drone-feature figcaption{display:flex;flex-direction:column;justify-content:center;padding:clamp(32px,5vw,74px)}
@@ -49,3 +49,5 @@
 .drone-feature p{color:#c9dfe9;font-size:13px;line-height:1.9;max-width:360px;margin-top:23px}
 @media(max-width:820px){.drone-feature{grid-template-columns:1fr}.drone-feature img{height:auto;aspect-ratio:1.45}.drone-feature figcaption{padding:30px 35px 38px}}
 @media(max-width:650px){.drone-feature{margin-top:6px}.drone-feature img{aspect-ratio:4/3}.drone-feature figcaption{padding:28px 23px 34px}.drone-feature .mono{margin-bottom:15px}.drone-feature p{margin-top:16px}}
+
+.drone-feature .drone-photo-credit{font:9px/1.9 var(--mono);color:#b7d0df;margin-top:25px}.drone-photo-credit a{text-decoration:underline;text-underline-offset:3px}

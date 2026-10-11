@@ -24,8 +24,11 @@
 - File: `me_home.jpg`
 - Existing photograph supplied in Alexandra's portfolio repository; reused unchanged at her request.
 
-## Drone applications portrait
+## Drone applications river photograph
 
-- File: `alexandra-drone-field.jpg`
-- Photograph supplied by Alexandra for this update; copied unchanged from `drone image wp.jpe`.
-- The portfolio page displays Alexandra with a controller and a drone. The photograph does not imply a completed mapping project or certification.
+- Photograph: Aerial view of river and fields, Sandnes, Norway, 21 August 2022.
+- Photographer: Jules Verne Times Two / https://julesvernex2.com/
+- Source: https://commons.wikimedia.org/wiki/File:Aerial_view_of_river_and_fields,_Sandnes,_Norway_julesvernex2.jpg
+- Licence: CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/
+- The image is served from Wikimedia Commons and cropped responsively by the page; the displayed crop is available under the same CC BY-SA 4.0 licence.
+- This is a contextual landscape photograph, not Alexandra's mapping output.
