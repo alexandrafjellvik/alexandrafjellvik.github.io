@@ -70,3 +70,8 @@ body{background:#183b52}.hero,.current-section,.drone-feature{background:#102c40
 :root{--accent:#becf99;--coral:#d5dfb7;--rose:#91ae82;--purple:#718d78}
 .hero-shade{background:linear-gradient(90deg,#102c40e6,#102c4070 55%,#102c4020),linear-gradient(0deg,#102c4070,transparent 45%)}
 @media(max-width:650px){.hero-shade{background:linear-gradient(90deg,#102c40e6,#102c4080),linear-gradient(0deg,#102c4070,transparent)}}
+
+/* Introduce the person before the perspective heading */
+.expertise-intro>.intro-portrait{margin:0 0 36px;gap:26px}.expertise-intro>.intro-portrait img{width:200px;flex-basis:200px}.expertise-intro>.intro-portrait .portrait-name{font-size:16px}
+@media(max-width:650px){.expertise-intro>.intro-portrait{gap:20px;margin-bottom:32px}.expertise-intro>.intro-portrait img{width:156px;flex-basis:156px}.expertise-intro>.intro-portrait .portrait-name{font-size:14px}}
+@media(max-width:380px){.expertise-intro>.intro-portrait{align-items:flex-start;flex-direction:column}.expertise-intro>.intro-portrait img{flex-basis:auto;width:180px}}
