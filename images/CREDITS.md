@@ -24,11 +24,9 @@
 - File: `me_home.jpg`
 - Existing photograph supplied in Alexandra's portfolio repository; reused unchanged at her request.
 
-## Drone applications river photograph
+## Drone applications aerial landscape
 
-- Photograph: Aerial view of river and fields, Sandnes, Norway, 21 August 2022.
-- Photographer: Jules Verne Times Two / https://julesvernex2.com/
-- Source: https://commons.wikimedia.org/wiki/File:Aerial_view_of_river_and_fields,_Sandnes,_Norway_julesvernex2.jpg
-- Licence: CC BY-SA 4.0, https://creativecommons.org/licenses/by-sa/4.0/
-- The image is served from Wikimedia Commons and cropped responsively by the page; the displayed crop is available under the same CC BY-SA 4.0 licence.
-- This is a contextual landscape photograph, not Alexandra's mapping output.
+- File: `drone-river-forest.jpg`
+- User-selected and uploaded image, optimised for web display and cropped responsively.
+- Source: https://www.magnific.com/free-photo/aerial-shot-beautiful-tree-forest-coast-sea_9991481.htm
+- Photographer: wirestock. Source credited as wirestock on Magnific on the page. No specific location is asserted.
