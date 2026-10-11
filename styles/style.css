@@ -89,3 +89,10 @@ body{background:#183b52}.hero,.current-section,.drone-feature{background:#102c40
 .drone-section .drone-intro .training-note strong{color:#e5ede7}
 .drone-section .drone-intro .training-note>.mono{color:#becf99}
 .drone-section .drone-intro .training-note .training-course>span{color:#c0d2cc}
+
+/* English first, Norwegian second */
+.language-switch{display:flex;align-items:center;gap:7px;white-space:nowrap;font:11px var(--mono);margin-left:auto;order:5}.language-switch a{display:inline-flex;align-items:center;justify-content:center;min-width:34px;min-height:44px;color:var(--muted)}.language-switch a[aria-current="page"]{color:var(--accent);text-decoration:underline;text-underline-offset:5px}.site-header nav{margin-left:auto}
+@media(max-width:1100px){.site-header nav{gap:16px}.site-header{gap:18px}}
+@media(max-width:650px){.language-switch{order:0;margin-left:auto}.menu-toggle{order:1}.site-header nav{order:2}}
+
+@media(min-width:651px) and (max-width:900px){.site-header{flex-wrap:wrap}.language-switch{order:0}.site-header nav{order:2;width:100%;justify-content:flex-end;margin-left:0}}

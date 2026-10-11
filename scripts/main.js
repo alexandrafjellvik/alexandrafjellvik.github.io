@@ -36,7 +36,7 @@ function filterProjects(category) {
   filterButtons.forEach((button) => {
     button.setAttribute('aria-pressed', String(button.dataset.filter === category));
   });
-  if (filterStatus) filterStatus.textContent = `${count} ${count === 1 ? 'project' : 'projects'}`;
+  if (filterStatus) filterStatus.textContent = `${count} ${document.documentElement.lang === 'nb' ? (count === 1 ? 'prosjekt' : 'prosjekter') : (count === 1 ? 'project' : 'projects')}`;
 }
 filterButtons.forEach((button) => {
   button.addEventListener('click', () => filterProjects(button.dataset.filter));
@@ -72,7 +72,7 @@ document.querySelectorAll('.project-gallery').forEach((gallery) => {
   function show(index) {
     current = (index + images.length) % images.length;
     image.src = images[current];
-    image.alt = `${originalAlt}, image ${current + 1} of ${images.length}`;
+    image.alt = `${originalAlt}, ${document.documentElement.lang === 'nb' ? 'bilde' : 'image'} ${current + 1} ${document.documentElement.lang === 'nb' ? 'av' : 'of'} ${images.length}`;
     counter.textContent = `${current + 1} / ${images.length}`;
     if (fullsize) fullsize.href = images[current];
     if (imageLink) imageLink.href = images[current];
@@ -86,4 +86,8 @@ document.querySelectorAll('.project-gallery').forEach((gallery) => {
       show(current + (event.key === 'ArrowLeft' ? -1 : 1));
     }
   });
+});
+
+document.querySelectorAll(".language-switch a").forEach(link => {
+  link.addEventListener("click", () => { const destination = new URL(link.href); destination.hash = window.location.hash; link.href = destination.href; });
 });
